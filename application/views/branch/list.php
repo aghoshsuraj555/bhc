@@ -24,11 +24,11 @@ $statusarray = array('Y'=>'Active','N'=>'Deactive','classY'=>'success','classN'=
                     ?>
                             <tr>
                                 <td><?php echo $branch['name']; ?></td>
-                                <td><span class="btn btn-<?php echo $statusarray['class'.$branch['status']];  ?> btn-xs"><?php echo $statusarray[$branch['status']]; ?></span></td>
+                                <td><span class="btn branch-btn btn-<?php echo $statusarray['class'.$branch['status']];  ?> btn-xs"><?php echo $statusarray[$branch['status']]; ?></span></td>
                                 <td>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-secondary get-details" data-bs-toggle="modal" url="<?php echo base_url('branch/edit/' . $branch['id']) ?>" data-bs-target="#editModal" data-bs-whatever="@mdo">Edit</button>
-                                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                                        <button type="button" class="btn branch-btn btn-secondary get-details" data-bs-toggle="modal" url="<?php echo base_url('branch/edit/' . $branch['id']) ?>" data-bs-target="#editModal" data-bs-whatever="@mdo">Edit</button>
+                                        <button type="button" class="btn branch-btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
                                             <span class="visually-hidden">Toggle Dropdown</span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuReference">

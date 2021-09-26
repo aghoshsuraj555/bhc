@@ -51,7 +51,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
                     } else {
                         ?>
                         <tr>
-                            <td colspan="3" class="text-center">No Details Available!!</td>
+                            <td colspan="6" class="text-center">No Details Available!!</td>
                         </tr>
                     <?php
                     }
