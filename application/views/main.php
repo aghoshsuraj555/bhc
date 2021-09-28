@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/select2.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/sample.css'); ?>">
     <script src="<?php echo base_url('public/assets/js/jquery.min.js'); ?>"></script>
-    <title>Slim Nav-Bar | Final</title>
+    <title>BHC</title>
 </head>
 
 <body id="body-pd" class="position-relative body-pd">
@@ -20,7 +20,7 @@
     <div class="height-100 bg-light">
         <?php echo $content; ?>
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <form id="delete-form">
                         <div class="modal-body">
