@@ -25,12 +25,7 @@
                 <a href="<?php echo base_url('role');?>" class="nav_link"> <i class='bx bx-message-square-detail nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Role"></i> <span class="nav_name">Role</span> </a>
                 <a href="<?php echo base_url('enquiry');?>" class="nav_link"> <i class='bx bx-message-square-detail nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Enquiries"></i> <span class="nav_name">Enquiries</span> </a>
                 <a href="#" class="nav_link"> <i class='bx bx-user nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Users"></i> <span class="nav_name">Users</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Messages"></i> <span class="nav_name">Messages</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Bookmark"></i> <span class="nav_name">Bookmark</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Files"></i><span class="nav_name">Files</span> </a>
-                <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Stats"></i> <span class="nav_name">Stats</span> </a>
             </div>
         </div>
-        <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard"></i> <span class="nav_name">SignOut</span> </a>
     </nav>
 </div>
