@@ -75,12 +75,11 @@
         // Your code to run since DOM is loaded and ready
     });
 </script>
-
-<script src="<?php echo base_url('public/assets/js/bootstrap.min.js'); ?>"></script>
+<!-- <script src="<?php echo base_url('public/assets/js/popper.js'); ?>"></script> -->
+<!-- <script src="<?php echo base_url('public/assets/js/bootstrap.min.js'); ?>"></script> -->
 <script src="<?php echo base_url('public/assets/js/bootstrap.bundle.min.js'); ?>"></script>
 <script src="<?php echo base_url('public/assets/js/jquery.validate.min.js'); ?>"></script>
 <script src="<?php echo base_url('public/assets/js/jquery.validate.min.js'); ?>"></script>
-<script src="<?php echo base_url('public/assets/js/popper.js'); ?>"></script>
 <script src="<?php echo base_url('public/assets/js/jquery-ui.js'); ?>"></script>
 <script src="<?php echo base_url('public/assets/js/select2.min.js'); ?>"></script>
 <script>

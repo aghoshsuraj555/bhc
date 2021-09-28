@@ -19,16 +19,16 @@ a {
 }
 
 .card-header {
-    color: green !important;
+    color: rgba(153, 5, 34, 1) !important;
 }
 
 .button {
-    background-color: green;
+    background-color: rgba(153, 5, 34, 1);
     color: #f7f6fb;
 }
 
 .button:hover {
-    color: lightgreen !important;
+    color: rgba(153, 5, 34, 1) !important;
 }
 
 .header {
@@ -40,8 +40,12 @@ a {
     transition: 0.5s;
 }
 
+.branch-body {
+    background-color: pink;
+}
+
 .header_toggle {
-    color: green;
+    color: rgba(153, 5, 34, 0.808);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -58,7 +62,7 @@ a {
 .l-navbar {
     left: -30%;
     width: 4.25rem;
-    background-color: green;
+    background-color: rgba(153, 5, 34, 0.808);
     padding: 0.5rem 1rem 0 0;
     transition: 0.5s;
     z-index: 100;
@@ -95,13 +99,13 @@ a {
 
 .nav_link {
     position: relative;
-    color: lightgreen;
+    color: pink;
     margin-bottom: 0.1rem;
     transition: 0.3s;
 }
 
 .nav_link:hover {
-    color: #f7f6fb;
+    color: white;
 }
 
 .nav_icon {
