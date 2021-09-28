@@ -11,15 +11,17 @@ class Enquiry_model extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from($this->table_name);
+        $this->db->join('enquiry_status',"$this->table_name.enquiry_status_id=enquiry_status.id","left");
 		$query = $this->db->get();
         return $query->num_rows();
     }
 	
 	function get_pagination($num, $offset)
     {
-        $this->db->select('*');
+        $this->db->select("*,$this->table_name.id as id,$this->table_name.name as name,enquiry_status.name as enquiry_status");
 		$this->db->limit($num, $offset);
         $this->db->from($this->table_name);
+        $this->db->join('enquiry_status',"$this->table_name.enquiry_status_id=enquiry_status.id","left");
 		$query = $this->db->get();
         return $query->result_array();
     }

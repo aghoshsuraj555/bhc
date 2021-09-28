@@ -4,7 +4,7 @@ class Enquiry_status_model extends CI_Model
     function __construct()
     {
         parent::__construct();
-        $this->table_name = 'branch';
+        $this->table_name = 'enquiry_status';
         $this->primary_key = 'id';
     }
 
@@ -12,6 +12,14 @@ class Enquiry_status_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from($this->table_name);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    function get_active()
+    {
+        $this->db->select('*');
+        $this->db->from($this->table_name);
+        $this->db->where('status','Y');
         $query = $this->db->get();
         return $query->result_array();
     }
