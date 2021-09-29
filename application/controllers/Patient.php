@@ -14,46 +14,139 @@ class Patient extends Controller
 
     public function index()
     {
+        redirect('patient/lists');
+    }
+    public function lists()
+    {
         $main['header'] = $this->header();
-        $config['base_url'] = site_url('patients');
-		$config['total_rows'] = $this->Patient_model->get_pagination_count();
-		$config['per_page'] = '20';
-		$config['uri_segment'] = 4;
-	 	$config['first_link'] = false;
-   		$config['last_link'] = false;
-   		$config['next_link'] = '<i class="fa fa-angle-right"></i>';
-   		$config['prev_link'] = '<i class="fa fa-angle-left"></i>';
-   		$config['cur_tag_open'] = '<li class="active"><a>';
-   		$config['cur_tag_close'] = '</a></li>';
-   		$config['full_tag_open'] = '<ul class="pagination">';
-   		$config['full_tag_close'] = '</ul>';
-   		$config['num_tag_open'] = '<li>';
-   		$config['num_tag_close'] = '</li>';
-   		$config['next_tag_open'] = '<li class="right">';
-   		$config['next_tag_close'] = '</li>';
-   		$config['prev_tag_open'] = '<li class="left">';
-   		$config['prev_tag_close'] = '</li>';
-		$this->pagination->initialize($config);
-        $content['enquiries']=$this->Patient_model->get_pagination($config['per_page'],$this->uri->segment($config['uri_segment']));
-        $main['content'] = $this->load->view('patient/list');
+        $count = $this->Patient_model->get_pagination_count();
+        $config = $this->pagination($count,'enquiry');
+        $this->pagination->initialize($config);
+        $content['patients'] = $this->Patient_model->get_pagination($config['per_page'], $this->uri->segment($config['uri_segment']));
+        $main['content'] = $this->load->view('patient/list', $content, true);
         $this->load->view('main', $main);
     }
-
     public function add()
     {
-        $main['header'] = $this->header();
-        $content['nationality'] = $this->Nationality_model->get_all();
-        $content['source'] = $this->Source_model->get_all();
-        $main['content'] = $this->load->view('patient/add',$content,true);
-        $this->load->view('main', $main);
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('contactno', 'Contact Number', 'required');
+        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required');
+        $this->form_validation->set_rules('enquirydate', 'Enquiry Date', 'required');
+        $this->form_validation->set_rules('enquiry_status', 'Enquiry Status', 'required');
+        $this->form_validation->set_message('required', 'required');
+        $this->form_validation->set_message('valid_email', 'invalid email');
+        $this->form_validation->set_error_delimiters('<span class="red">(', ')</span>');
+        if ($this->form_validation->run() == FALSE) {
+          $main['header'] = $this->header();
+          $content['nationality'] = $this->Nationality_model->get_active();  
+          $main['content'] = $this->load->view('patient/add', $content, true);
+          $this->load->view('main', $main);
+        } else {
+            $data = array(
+                'name' => $this->input->post('name'),
+                'email_id' => $this->input->post('email'),
+                'city' => $this->input->post('city'),
+                'state' => $this->input->post('state'),
+                'pincode' => $this->input->post('pincode'),
+                'nationality_id' => $this->input->post('nationality'),
+                'contactno' => $this->input->post('contactno'),
+                'whatsappno' => $this->input->post('whatsappno'),
+                'dob' => date('Y-m-d',strtotime($this->input->post('dob'))),
+                'gender' => $this->input->post('gender'),
+                'profession' => $this->input->post('profession'),
+                'source' => $this->input->post('source'),
+                'nri' => $this->input->post('nri'),
+                'consultation_status_id' => $this->input->post('consultationstatus'),
+                'graftplan' => $this->input->post('graftplan'),
+                'method' => $this->input->post('method'),
+                'area' => $this->input->post('area'),
+                'extractednumber' => $this->input->post('extractednumber'),
+                'remarks' => $this->input->post('remarks'),
+                'status' => $this->input->post('status')
+              
+            );
+            $result = $this->Patient_model->insert($data);
+            if ($result) {
+                $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> Added Successfully!.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>');
+                redirect('patient/lists');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong>Not Added!.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>');
+                redirect('patient/lists');
+            }
+        }
     }
 
-    public function edit($id)
+    public function edit($id, $return = 0)
     {
-        $main['header'] = $this->header();
-        $content['nationality'] = $this->Nationality_model->get_all();
-        $content['enquiry'] = $this->Patient_model->get_one($id);
-        $main['content'] = $this->load->view('patient/edit',$content);
-        $this->load->view('main', $main);
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('contactno', 'Contact Number', 'required');
+        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required');
+        $this->form_validation->set_rules('enquirydate', 'Enquiry Date', 'required');
+        $this->form_validation->set_rules('enquiry_status', 'Enquiry Status', 'required');
+        $this->form_validation->set_message('required', 'required');
+        $this->form_validation->set_message('valid_email', 'invalid email');
+        $this->form_validation->set_error_delimiters('<span class="red">(', ')</span>');
+        if ($this->form_validation->run() == FALSE) {
+          $main['header'] = $this->header();
+          $content['return'] = $return;
+          $content['patient'] = $this->Patient_model->get_one($id);
+          $content['sources'] = $this->Source_model->get_active();
+          $content['enquiry_statuses'] = $this->Enquiry_status_model->get_active();
+          $content['users'] = $this->User_model->get_active();  
+          $content['nationality'] = $this->Nationality_model->get_active();  
+          $main['content'] = $this->load->view('patient/edit', $content, true);
+          $this->load->view('main', $main);
+        } else {
+            $data = array(
+                'name' => $this->input->post('name'),
+                'email_id' => $this->input->post('email'),
+                'contactno' => $this->input->post('contactno'),
+                'whatsappno' => $this->input->post('whatsappno'),
+                'nationality_id' => $this->input->post('nationality'),
+                'enquiry_date' => date('Y-m-d',strtotime($this->input->post('enquirydate'))),
+                'source_id' => $this->input->post('source'),
+                'enquiry_status_id' => $this->input->post('enquiry_status'),
+                'user_id' => $this->input->post('assign_to'),
+                'remarks' => $this->input->post('remarks')
+            );
+            $result = $this->Patient_model->update($data,$id);
+            if ($result) {
+                $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> Added Successfully!.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>');
+                redirect('patient/lists/'.$return);
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong>Not Added!.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>');
+                redirect('patient/lists/'.$return);
+            }
+        }
+    }
+
+    public function delete($id, $return = 0)
+    {
+        $result = $this->Patient_model->delete($id);
+        if ($result) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> Deleted Successfully!.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>');
+            redirect('patient/lists/' . $return);
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong>Not Added!.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>');
+            redirect('patient/lists/' . $return);
+        }
     }
 }
