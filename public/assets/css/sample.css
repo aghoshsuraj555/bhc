@@ -200,7 +200,7 @@ a {
     .ui-datepicker {
         top: 131px !important;
     }
-    .error {
+    label.error {
         color: #ff0000;
     }
 }

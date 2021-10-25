@@ -1,3 +1,7 @@
+<?php
+$priorities = array('High', 'Medium', 'Low');
+$nris = array('Yes', 'No');
+?>
 <div class="container-fluid d-md-flex mb-4">
     <?php echo form_open('enquiry/add/', array('id' => 'form')); ?>
     <div class="row col-12">
@@ -22,7 +26,29 @@
                             <label for="whatsapp-number" class="form-label">WhatsApp Number<span class="text-danger">*</span></label>
                             <input type="text" class="form-control required" id="whatsappno" name="whatsappno" placeholder="WhatsApp Number" required>
                         </div>
-
+                        <div class="col-md-6">
+                            <label for="nri" class="form-label">Nri</label>
+                            <select id="nri" name="nri" class="form-select">
+                                <option value="">Choose...</option>
+                                <?php
+                                foreach ($nris as $nri) {
+                                ?>
+                                    <option value="<?php echo $nri; ?>"><?php echo $nri; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="city" class="form-label">City<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control required" id="city" name="city" placeholder="City" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">State/Province<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control required" id="state" name="state" placeholder="State" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pincode" class="form-label">Postal Code<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control required" id="pincode" name="pincode" placeholder="pincode" required>
+                        </div>
                         <div class="col-md-6">
                             <label for="nationality" class="form-label">Nationality</label>
                             <select id="nationality" name="nationality" class="form-select search-select">
@@ -50,7 +76,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="source" class="form-label">Source</label>
-                            <select id="source" name="source" class="form-select">
+                            <select id="source" name="source" class="form-select search-select">
                                 <option value="">Choose...</option>
                                 <?php
                                 foreach ($sources as $source) {
@@ -61,12 +87,27 @@
                         </div>
                         <div class="col-md-6">
                             <label for="enquiry_status" class="form-label">Enquiry Status</label>
-                            <select id="enquiry_status" name="enquiry_status" class="form-select required">
+                            <select id="enquiry_status" name="enquiry_status" class="form-select search-select">
                                 <option value="">Choose...</option>
                                 <?php
                                 foreach ($enquiry_statuses as $enquiry_status) {
                                 ?>
                                     <option value="<?php echo $enquiry_status['id']; ?>"><?php echo $enquiry_status['name']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="col-md-6 d-none" id="followup">
+                            <label for="followupdate" class="form-label">Followup Date</label>
+                            <input type="text" class="form-control disable datepicker required" name="followupdate" id="followupdate">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="priority" class="form-label">Priority</label>
+                            <select id="priority" name="priority" class="form-select required">
+                                <option value="">Choose...</option>
+                                <?php
+                                foreach ($priorities as $priority) {
+                                ?>
+                                    <option value="<?php echo $priority; ?>"><?php echo $priority; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -77,7 +118,7 @@
                                 <?php
                                 foreach ($users as $user) {
                                 ?>
-                                    <option value="<?php echo $user['id']; ?>"><?php echo $user['name']; ?></option>
+                                    <option value="<?php echo $user['id']; ?>"><?php echo $user['fname'].' '.$user['lname']; ?></option>
                                 <?php } ?>
                             </select>
                         </div>

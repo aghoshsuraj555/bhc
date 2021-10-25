@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/bootstrap.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/boxicons.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('public/assets/css/sample.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('public/assets/css/jquery.timepicker.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/jquery-ui.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/select2.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/sample.css'); ?>">
     <script src="<?php echo base_url('public/assets/js/jquery.min.js'); ?>"></script>
+    <script src="<?php echo base_url('public/assets/js/jquery.timepicker.min.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <title>BHC</title>
 </head>
 
@@ -77,11 +79,12 @@
 </script>
 <!-- <script src="<?php echo base_url('public/assets/js/popper.js'); ?>"></script> -->
 <!-- <script src="<?php echo base_url('public/assets/js/bootstrap.min.js'); ?>"></script> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script src="<?php echo base_url('public/assets/js/bootstrap.bundle.min.js'); ?>"></script>
-<script src="<?php echo base_url('public/assets/js/jquery.validate.min.js'); ?>"></script>
 <script src="<?php echo base_url('public/assets/js/jquery.validate.min.js'); ?>"></script>
 <script src="<?php echo base_url('public/assets/js/jquery-ui.js'); ?>"></script>
 <script src="<?php echo base_url('public/assets/js/select2.min.js'); ?>"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
@@ -98,8 +101,71 @@
                 }
             });
         });
-
-        $('.deleteModal').click(function(){
+        $("#getAllDetails").on('click', '.ajaxPopup', function() {
+            let url = $(this).attr('url');
+            $.ajax({
+                type: "get",
+                url: url,
+                dataType: "json",
+                success: function(data) {
+                    $('#ajaxPopform').html(data.view);
+                }
+            });
+        });
+        $('#getAllDetails').on('click', '.addAjaxPopup', function(e) {
+            e.preventDefault();
+            var form = $('#getAllDetails #form');
+            $.ajax({
+                type: "POST",
+                url: form[0].action,
+                data: form.serialize(),
+                dataType: "json",
+                success: function(data) {
+                    if (data.type == 'error') {
+                        $('#ajaxPopform').html(data.view);
+                    } else {
+                        $(".modal").modal("hide");
+                        $('#getAllDetails').html(data.view);
+                    }
+                },
+                error: function() {
+                    console.log('error');
+                }
+            });
+        });
+        $('#getAllDetails').on('click', '.editAjaxPopup', function(e) {
+            e.preventDefault();
+            var form = $('#getAllDetails #form');
+            console.log(form[0].action);
+            $.ajax({
+                type: "POST",
+                url: form[0].action,
+                data: form.serialize(),
+                dataType: "json",
+                success: function(data) {
+                    if (data.type == 'error') {
+                        $('#get-details').html(data.view);
+                    } else {
+                        $(".modal").modal("hide");
+                        $('#getAllDetails').html(data.view);
+                    }
+                },
+                error: function() {
+                    console.log('error');
+                }
+            });
+        });
+        $('#getAllDetails').on('click', '.get-details', function() {
+            let url = $(this).attr('url');
+            $.ajax({
+                type: "get",
+                url: url,
+                success: function(result) {
+                    $('#get-details').html(result);
+                }
+            });
+        });
+        $('.deleteModal').click(function() {
             let url = $(this).attr('url');
             document.getElementById('delete-form').action = url;
         });
@@ -108,19 +174,51 @@
             dateFormat: 'dd-mm-yy'
         });
 
-        $('.search-select').select2();
-        $('#form').validate({
-            rules: {
-                field1: {
-                    required: true,
-                    email: true
-                },
-                field2: {
-                    required: true,
-                    minlength: 5
-                }
+        $('.daterange_picker').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
             }
         });
+
+        $('.daterange_picker').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+        });
+
+        $('.daterange_picker').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val('');
+        });
+
+        $('.search-select').select2();
+        $('.timepicker').timepicker({});
+        $('#form').validate({
+            rules: {
+
+            }
+        });
+        $('#get-details').on('click', '#form', function() {
+            $("#get-details #form").validate();
+        });
+        $('#enquiry_status').on('change', function() {
+            let val = $(this).val();
+            if (val == 1) {
+                $('#followup').addClass('d-block');
+                $('#followup').removeClass('d-none');
+            } else {
+                $('#followup').addClass('d-none');
+                $('#followup').removeClass('d-block');
+            }
+        });
+        if ($('#getAllDetails').length > 0) {
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                url: "<?php echo base_url('appointment/lists/' . $this->uri->segment('3')) ?>",
+                success: function(data) {
+                    $('#getAllDetails').html(data.view);
+                }
+            });
+        }
     });
 </script>
 <script>

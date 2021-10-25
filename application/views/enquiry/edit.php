@@ -1,3 +1,7 @@
+<?php
+$priorities = array('High', 'Medium', 'Low');
+$nris = array('Yes', 'No');
+?>
 <div class="container-fluid d-md-flex mb-4">
     <?php echo form_open('enquiry/edit/'.$enquiry->id, array('id' => 'form')); ?>
     <div class="row col-12">
@@ -22,7 +26,25 @@
                             <label for="whatsapp-number" class="form-label">WhatsApp Number<span class="text-danger">*</span></label>
                             <input type="text" class="form-control required" id="whatsappno" name="whatsappno" value="<?php echo $enquiry->whatsappno;?>" placeholder="WhatsApp Number" required>
                         </div>
-
+                        <div class="col-md-6">
+                            <label for="nri" class="form-label">Nri</label>
+                            <select id="nri" name="nri" class="form-select">
+                                <option value="">Choose...</option>
+                                <?php
+                                foreach ($nris as $nri) {
+                                ?>
+                                    <option value="<?php echo $nri; ?>"<?php echo ($nri==$enquiry->nri)?'selected':'';?>><?php echo $nri; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="city" class="form-label">City<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control required" id="city" name="city" value="<?php echo $enquiry->city;?>" placeholder="City" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">State/Province<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control required" id="state" name="state" value="<?php echo $enquiry->state;?>" placeholder="State" required>
+                        </div>
                         <div class="col-md-6">
                             <label for="nationality" class="form-label">Nationality</label>
                             <select id="nationality" name="nationality" class="form-select search-select">
@@ -70,6 +92,21 @@
                                 <?php } ?>
                             </select>
                         </div>
+                        <div class="col-md-6 d-none" id="followup">
+                            <label for="followupdate" class="form-label">Followup Date</label>
+                            <input type="text" class="form-control disable datepicker required" name="followupdate" id="followupdate" value="<?php echo ($enquiry->followup_date)?date('d-m-Y',strtotime($enquiry->followup_date)):'';?>">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="priority" class="form-label">Priority</label>
+                            <select id="priority" name="priority" class="form-select required">
+                                <option value="">Choose...</option>
+                                <?php
+                                foreach ($priorities as $priority) {
+                                ?>
+                                    <option value="<?php echo $priority; ?>" <?php echo ($priority==$enquiry->nri)?'selected':'';?>><?php echo $priority; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
                         <div class="col-md-6">
                             <label for="assign_to" class="form-label">Assigned to</label>
                             <select id="assign_to" name="assign_to" class="form-select">
@@ -77,7 +114,7 @@
                                 <?php
                                 foreach ($users as $user) {
                                 ?>
-                                    <option value="<?php echo $user['id']; ?>"<?php echo ($user['id']==$enquiry->user_id)?'selected':'';?>><?php echo $user['name']; ?></option>
+                                    <option value="<?php echo $user['id']; ?>"<?php echo ($user['id']==$enquiry->user_id)?'selected':'';?>><?php echo $user['fname'].' '.$user['lname']; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
