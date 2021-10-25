@@ -14,6 +14,14 @@ class User_model extends CI_Model {
 		$query = $this->db->get();
         return $query->result_array();
     }
+    function get_cond($cond=array())
+    {
+        $this->db->select('*');
+        $this->db->from($this->table_name);
+        $this->db->where($cond);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
     function get_active()
     {
         $this->db->select('*');
@@ -41,9 +49,10 @@ class User_model extends CI_Model {
 	
 	function get_pagination($num, $offset)
     {
-        $this->db->select('*');
+        $this->db->select('*,users.id as user_id');
 		$this->db->limit($num, $offset);
         $this->db->from($this->table_name);
+        $this->db->join('roles',"$this->table_name.role_id = roles.id","left");
 		$query = $this->db->get();
         return $query->result_array();
     }
@@ -63,5 +72,18 @@ class User_model extends CI_Model {
 		$cond[$this->primary_key]=$id;
 		return $this->db->delete($this->table_name,$cond);
 	}
-	
+
+    function code_exists($code,$id)
+
+	{
+        $this->db->where('username',$code);
+        $this->db->where('id !=',$id);
+        $query = $this->db->get($this->table_name);
+        $result = $query->num_rows();
+        if($result>0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

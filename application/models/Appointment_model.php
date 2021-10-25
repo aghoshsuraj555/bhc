@@ -1,17 +1,21 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-class Branch_model extends CI_Model
+class Appointment_model extends CI_Model
 {
     function __construct()
     {
         parent::__construct();
-        $this->table_name = 'branch';
+        $this->table_name = 'appointments';
         $this->primary_key = 'id';
     }
 
-    function get_all()
+    function get_all($where=array(),$order='')
     {
-        $this->db->select('*');
+        $this->db->select("*,$this->table_name.id as appointment_id,$this->table_name.status as status");
         $this->db->from($this->table_name);
+        $this->db->join('users',"$this->table_name.user_id=users.id","left");
+        $this->db->join('services',"$this->table_name.service_id=services.id","left");
+        $this->db->where($where);
+        $this->db->order_by($order);
         $query = $this->db->get();
         return $query->result_array();
     }

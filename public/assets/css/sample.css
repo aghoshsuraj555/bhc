@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --button-color: rgba(153, 5, 34, 0.808);
+    --button-color-hover: rgba(153, 5, 34, 0.7);
+}
+
 body {
     margin: 3rem 0 0 0;
     padding: 0 1rem;
@@ -19,16 +24,16 @@ a {
 }
 
 .card-header {
-    color: green !important;
+    color: rgba(153, 5, 34, 1) !important;
 }
 
 .button {
-    background-color: green;
+    background-color: rgba(153, 5, 34, 1);
     color: #f7f6fb;
 }
 
 .button:hover {
-    color: lightgreen !important;
+    color: rgba(153, 5, 34, 1) !important;
 }
 
 .header {
@@ -40,8 +45,12 @@ a {
     transition: 0.5s;
 }
 
+.branch-body {
+    background-color: pink;
+}
+
 .header_toggle {
-    color: green;
+    color: rgba(153, 5, 34, 0.808);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -58,7 +67,7 @@ a {
 .l-navbar {
     left: -30%;
     width: 4.25rem;
-    background-color: green;
+    background-color: rgba(153, 5, 34, 0.808);
     padding: 0.5rem 1rem 0 0;
     transition: 0.5s;
     z-index: 100;
@@ -66,6 +75,26 @@ a {
 
 .l-navbar a {
     text-decoration: none !important;
+}
+
+.button-color {
+    background-color: var(--button-color);
+    color: white;
+    box-shadow: none;
+    border: 1px solid var(--button-color);
+}
+
+.button-color:hover {
+    background-color: var(--button-color-hover);
+    box-shadow: none;
+    border: 1px solid var(--button-color-hover);
+}
+
+.button-color:focus,
+.button-color:focus:active {
+    box-shadow: none;
+    background-color: var(--button-color-hover);
+    border: 1px solid var(--button-color-hover);
 }
 
 .nav_logo,
@@ -95,13 +124,13 @@ a {
 
 .nav_link {
     position: relative;
-    color: lightgreen;
+    color: pink;
     margin-bottom: 0.1rem;
     transition: 0.3s;
 }
 
 .nav_link:hover {
-    color: #f7f6fb;
+    color: white;
 }
 
 .nav_icon {
@@ -167,7 +196,7 @@ a {
     .ui-datepicker {
         top: 131px !important;
     }
-    .error {
+    label.error {
         color: #ff0000;
     }
 }

@@ -1,24 +1,17 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Role_model extends CI_Model {
-     function __construct()
-     {
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+class Service_model extends CI_Model
+{
+    function __construct()
+    {
         parent::__construct();
- 		$this->table_name='roles';
- 		$this->primary_key ='id';
-     }
-
- 	function get_all()
-    {
-        $this->db->select('*');
-        $this->db->from($this->table_name);
-		$query = $this->db->get();
-        return $query->result_array();
+        $this->table_name = 'services';
+        $this->primary_key = 'id';
     }
-    function get_cond($cond=array())
+
+    function get_all()
     {
         $this->db->select('*');
         $this->db->from($this->table_name);
-        $this->db->where($cond);
         $query = $this->db->get();
         return $query->result_array();
     }
@@ -31,22 +24,31 @@ class Role_model extends CI_Model {
         $query = $this->db->get();
         return $query->row();
     }
- 	function get_pagination_count()
+    function get_cond($cond=array())
     {
         $this->db->select('*');
         $this->db->from($this->table_name);
-		$query = $this->db->get();
-        return $query->num_rows();
-    }
-	
-	function get_pagination($num, $offset)
-    {
-        $this->db->select('*');
-		$this->db->limit($num, $offset);
-        $this->db->from($this->table_name);
-		$query = $this->db->get();
+        $this->db->where($cond);
+        $query = $this->db->get();
         return $query->result_array();
     }
+    function get_pagination_count()
+    {
+        $this->db->select('*');
+        $this->db->from($this->table_name);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    function get_pagination($num, $offset)
+    {
+        $this->db->select('*');
+        $this->db->limit($num, $offset);
+        $this->db->from($this->table_name);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     function insert($data)
     {
         return $this->db->insert($this->table_name, $data);
@@ -63,5 +65,4 @@ class Role_model extends CI_Model {
 		$cond[$this->primary_key]=$id;
 		return $this->db->delete($this->table_name,$cond);
 	}
-	
 }

@@ -23,6 +23,14 @@ class Consultation_status_model extends CI_Model {
         $query = $this->db->get();
         return $query->row();
     }
+    function get_active()
+    {
+        $this->db->select('*');
+        $this->db->from($this->table_name);
+        $this->db->where('status','Y');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
  	function get_pagination_count()
     {
         $this->db->select('*');
