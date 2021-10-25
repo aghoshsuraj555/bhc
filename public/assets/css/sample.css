@@ -84,6 +84,10 @@ a {
     border: 1px solid var(--button-color);
 }
 
+.active-dropdown {
+    display: none;
+}
+
 .button-color:hover {
     background-color: var(--button-color-hover);
     box-shadow: none;

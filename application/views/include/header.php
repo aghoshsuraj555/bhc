@@ -28,7 +28,7 @@
 					<li><a href="#" class="nav_link"> <i class='bx bx-user nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Users"></i> <span class="nav_name">Users</span> </a></li>
 					<li>
 						<a class="nav_link" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-						<i class='bx bx-user nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Users"></i> <span class="nav_name">Home <i class="bx bx-caret-down"></i></span> 
+							<i class='bx bx-user nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Users"></i> <span class="nav_name">Home <i class="bx bx-caret-down"></i></span>
 						</a>
 						<div class="collapse" id="home-collapse">
 							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1  ps-5">
@@ -48,6 +48,7 @@
 							<a class="nav_link" href="#">Link 3</a>
 						</div>
 					</li>
+					
 				</ul>
 
 			</div>
