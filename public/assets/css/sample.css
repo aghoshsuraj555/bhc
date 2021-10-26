@@ -6,8 +6,8 @@
 }
 
 :root {
-    --button-color: rgba(153, 5, 34, 0.808);
-    --button-color-hover: rgba(153, 5, 34, 0.7);
+    --button-color-primary: rgba(153, 5, 34, 0.808);
+    --button-color-primary-hover: rgba(153, 5, 34, 0.7);
 }
 
 body {
@@ -77,28 +77,28 @@ a {
     text-decoration: none !important;
 }
 
-.button-color {
-    background-color: var(--button-color);
-    color: white;
-    box-shadow: none;
-    border: 1px solid var(--button-color);
+.button-primary {
+    background-color: var(--button-color-primary) !important;
+    color: white !important;
+    box-shadow: none !important;
+    border: 1px solid var(--button-color-primary) !important;
 }
 
 .active-dropdown {
     display: none;
 }
 
-.button-color:hover {
-    background-color: var(--button-color-hover);
-    box-shadow: none;
-    border: 1px solid var(--button-color-hover);
+.button-primary:hover {
+    background-color: var(--button-color-primary-hover) !important;
+    box-shadow: none !important;
+    border: 1px solid var(--button-color-primary-hover) !important;
 }
 
-.button-color:focus,
-.button-color:focus:active {
-    box-shadow: none;
-    background-color: var(--button-color-hover);
-    border: 1px solid var(--button-color-hover);
+.button-primary:focus,
+.button-primary:focus:active {
+    box-shadow: none !important;
+    background-color: var(--button-color-primary-hover) !important;
+    border: 1px solid var(--button-color-primary-hover) !important;
 }
 
 .nav_logo,
@@ -141,7 +141,7 @@ a {
     font-size: 1.25rem;
 }
 
-.show {
+.show-side {
     left: 0;
 }
 
@@ -174,6 +174,10 @@ a {
     .header {
         height: calc(3rem + 1rem);
         padding: 0 2rem 0 calc(4.25rem + 2rem);
+    }
+    .header-image {
+        width: 10rem;
+        height: 6rem;
     }
     .header_img {
         width: 40px;

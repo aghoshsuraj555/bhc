@@ -17,7 +17,7 @@
     <title>BHC</title>
 </head>
 
-<body id="body-pd" class="position-relative body-pd">
+<body id="body-pd" class="position-relative body-pd overflow-hidden">
     <?php echo $header; ?>
     <div class="height-100 bg-light">
         <?php echo $content; ?>

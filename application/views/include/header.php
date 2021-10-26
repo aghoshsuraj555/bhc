@@ -15,7 +15,7 @@
 <div class="l-navbar position-fixed vh-100 top-0 show-side" id="nav-bar">
     <nav class="h-100 d-flex flex-column justify-content-between overflow-hidden">
         <div>
-            <a href="#" class="nav_logo mb-2"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name fw-bold">BBBootstrap</span> </a>
+            <a href="#" class="nav_logo mb-2"> <img src="<?php echo base_url('public/assets/images/logo-new.png'); ?>" class="img-fluid header-image" alt=""> </a>
             <div class="nav_list">
                 <a href="#" class="nav_link"> <i class='bx bx-grid-alt nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard"></i> <span class="nav_name">Dashboard</span> </a>
                 <a href="<?php echo base_url('enquiry');?>" class="nav_link"> <i class='bx bx-message-square-detail nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Enquiries"></i> <span class="nav_name">Enquiries</span> </a>
