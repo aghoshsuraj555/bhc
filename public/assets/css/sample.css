@@ -77,7 +77,7 @@ a {
     text-decoration: none !important;
 }
 
-.button-primary {
+.btn-primary {
     background-color: var(--button-color-primary) !important;
     color: white !important;
     box-shadow: none !important;
@@ -88,14 +88,14 @@ a {
     display: none;
 }
 
-.button-primary:hover {
+.btn-primary:hover {
     background-color: var(--button-color-primary-hover) !important;
     box-shadow: none !important;
     border: 1px solid var(--button-color-primary-hover) !important;
 }
 
-.button-primary:focus,
-.button-primary:focus:active {
+.btn-primary:focus,
+.btn-primary:focus:active {
     box-shadow: none !important;
     background-color: var(--button-color-primary-hover) !important;
     border: 1px solid var(--button-color-primary-hover) !important;
