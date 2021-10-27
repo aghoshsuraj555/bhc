@@ -13,11 +13,11 @@ $methods = array('Y', 'N');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="patientId" class="form-label">Patient ID<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required" name="patientid" id="patientid" value="<?php echo $patient->patient_id; ?>" readonly>
+                            <input type="text" class="form-control required req-field" name="patientid" id="patientid" value="<?php echo $patient->patient_id; ?>" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="name" class="form-label">Patient Name</label>
-                            <input type="text" class="form-control required" name="name" id="name" placeholder="Name" value="<?php echo $patient->name; ?>">
+                            <input type="text" class="form-control required req-field" name="name" id="name" placeholder="Name" value="<?php echo $patient->name; ?>">
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Email ID</label>
@@ -25,11 +25,11 @@ $methods = array('Y', 'N');
                         </div>
                         <div class="col-md-6">
                             <label for="contactno" class="form-label">Contact Number</label>
-                            <input type="text" class="form-control required" id="contactno" name="contactno" placeholder="Contact Number" value="<?php echo $patient->contactno; ?>">
+                            <input type="text" class="form-control required req-field" id="contactno" name="contactno" placeholder="Contact Number" value="<?php echo $patient->contactno; ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="whatsappno" class="form-label">WhatsApp Number<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required" id="whatsappno" name="whatsappno" placeholder="WhatsApp Number" value="<?php echo $patient->whatsappno; ?>">
+                            <input type="text" class="form-control required req-field" id="whatsappno" name="whatsappno" placeholder="WhatsApp Number" value="<?php echo $patient->whatsappno; ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="dob" class="form-label">Date of Birth</label>
@@ -56,11 +56,11 @@ $methods = array('Y', 'N');
                         </div>
                         <div class="col-md-6">
                             <label for="city" class="form-label">City</label>
-                            <input type="text" class="form-control required" name="city" id="city" placeholder="City" value="<?php echo $patient->city; ?>">
+                            <input type="text" class="form-control required req-field" name="city" id="city" placeholder="City" value="<?php echo $patient->city; ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="state" class="form-label">State/Province</label>
-                            <input type="text" class="form-control required" id="state" name="state" placeholder="State" value="<?php echo $patient->state; ?>">
+                            <input type="text" class="form-control required req-field" id="state" name="state" placeholder="State" value="<?php echo $patient->state; ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="pincode" class="form-label">Pincode</label>
@@ -68,7 +68,7 @@ $methods = array('Y', 'N');
                         </div>
                         <div class="col-md-6">
                             <label for="nri" class="form-label">NRI</label>
-                            <select id="nri" name="nri" class="form-select required">
+                            <select id="nri" name="nri" class="form-select required req-field">
                                 <option value="">Choose...</option>
                                 <?php
                                 foreach ($nris as $nri) {
@@ -109,11 +109,11 @@ $methods = array('Y', 'N');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="enquiry-date" class="form-label">Enquiry Date</label>
-                            <input type="text" class="form-control disable datepicker required" name="enquirydate" id="enquirydate" value="<?php echo ($patient->enquiry_date) ? date('d-m-Y', strtotime($patient->enquiry_date)) : ''; ?>">
+                            <input type="text" class="form-control disable datepicker required req-field" name="enquirydate" id="enquirydate" value="<?php echo ($patient->enquiry_date) ? date('d-m-Y', strtotime($patient->enquiry_date)) : ''; ?>">
                         </div>
                         <div class="col-md-6">
                             <label for="source" class="form-label">Source</label>
-                            <select id="source" name="source" class="form-select required">
+                            <select id="source" name="source" class="form-select required req-field">
                                 <option value="">Choose...</option>
                                 <?php
                                 foreach ($sources as $source) {

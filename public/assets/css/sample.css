@@ -8,8 +8,36 @@
 :root {
     --button-color-primary: rgba(153, 5, 34, 0.808);
     --button-color-primary-hover: rgba(153, 5, 34, 0.7);
-    --button-color-rose: #7c5161;
-    --button-color-rose-hover: #960000;
+    --button-color-search: #7c5161;
+    --button-color-search-hover: #960000;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: rgb(148, 148, 148);
 }
 
 body {
@@ -23,6 +51,10 @@ body {
 
 a {
     text-decoration: none;
+}
+
+.req-field {
+    border-left: 3px solid red;
 }
 
 .card-header {
@@ -45,6 +77,10 @@ a {
     background-color: #f7f6fb;
     z-index: 100;
     transition: 0.5s;
+}
+
+.header-menu {
+    overflow-x: hidden;
 }
 
 .branch-body {
@@ -103,24 +139,24 @@ a {
     border: 1px solid var(--button-color-primary-hover) !important;
 }
 
-.button-rose {
-    background-color: var(--button-color-rose) !important;
+.button-search {
+    background-color: var(--button-color-search) !important;
     color: white !important;
     box-shadow: none !important;
-    border: 1px solid var(--button-color-rose) !important;
+    border: 1px solid var(--button-color-search) !important;
 }
 
-.button-rose:hover {
-    background-color: var(--button-color-rose-hover) !important;
+.button-search:hover {
+    background-color: var(--button-color-search-hover) !important;
     box-shadow: none !important;
-    border: 1px solid var(--button-color-rose-hover) !important;
+    border: 1px solid var(--button-color-search-hover) !important;
 }
 
-.button-rose:focus,
-.button-rose:focus:active {
+.button-search:focus,
+.button-search:focus:active {
     box-shadow: none !important;
-    background-color: var(--button-color-rose-hover) !important;
-    border: 1px solid var(--button-color-rose-hover) !important;
+    background-color: var(--button-color-search-hover) !important;
+    border: 1px solid var(--button-color-search-hover) !important;
 }
 
 .nav_logo,
@@ -164,7 +200,7 @@ a {
 }
 
 .icon-show {
-    padding: 2px;
+    padding: 7px;
 }
 
 .icon-show img {
@@ -198,6 +234,12 @@ a {
     height: 100vh;
 }
 
+.header-image {
+    width: 10rem;
+    height: 6rem;
+    transition: all ease-in-out .5s;
+}
+
 @media screen and (min-width: 768px) {
     body {
         margin: calc(3rem + 1rem) 0 0 0;
@@ -206,11 +248,6 @@ a {
     .header {
         height: calc(3rem + 1rem);
         padding: 0 2rem 0 calc(4.25rem + 2rem);
-    }
-    .header-image {
-        width: 10rem;
-        height: 6rem;
-        transition: all ease-in-out 1s;
     }
     .header_img {
         width: 40px;
@@ -239,6 +276,14 @@ a {
     }
     label.error {
         color: #ff0000;
+    }
+}
+
+@media (max-width:760px) {
+    .header-image {
+        width: 3rem;
+        height: 3rem;
+        transition: all ease-in-out .5s;
     }
 }
 

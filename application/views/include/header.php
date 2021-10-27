@@ -1,9 +1,9 @@
 <header class="header d-flex justify-content-between align-items-center position-fixed w-100 top-0 body-pd" id="header">
 	<div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
 	<!-- <div class="header_img d-flex justify-content-center rounded-circle overflow-hidden"> <img src="/final/images/profile.jpg" alt=""> </div> -->
-	<div class="d-flex justify-content-between">
-		<div class="branch">
-			<label for="branch-name">Branch  </label>
+	<div class="d-flex justify-content-between ">
+		<div class="branch pe-md-5">
+			<label for="branch-name">Branch </label>
 			<select id="branch-name" name="branch-name" class="form-select search-select">
 				<option value="">Choose...</option>
 
@@ -22,7 +22,7 @@
 	</div>
 </header>
 <div class="l-navbar position-fixed vh-100 top-0 show-side" id="nav-bar">
-	<nav class="h-100 d-flex flex-column justify-content-between overflow-hidden">
+	<nav class="header-menu vh-100 d-flex flex-column justify-content-between">
 		<div>
 			<a href="#" id="iconId" class="nav_logo icon mb-2"> <img src="<?php echo base_url('public/assets/images/logo-new.png'); ?>" class="img-fluid header-image" alt=""> </a>
 			<div class="nav_list">
@@ -36,7 +36,18 @@
 				<a href="<?php echo base_url('source'); ?>" class="nav_link"> <i class='bx bx-message-square-detail nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Sources"></i> <span class="nav_name">Sources</span> </a>
 				<a href="<?php echo base_url('role'); ?>" class="nav_link"> <i class='bx bx-message-square-detail nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Roles"></i> <span class="nav_name">Roles</span> </a>
 				<a href="<?php echo base_url('user'); ?>" class="nav_link"> <i class='bx bx-user nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Users"></i> <span class="nav_name">Users</span> </a>
+				<a class="nav_link" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+					<i class='bx bx-user nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Users"></i> <span class="nav_name">Home <i class="bx bx-caret-down"></i></span>
+				</a>
+				<div class="collapse" id="home-collapse">
+					<ul class="btn-toggle-nav list-unstyled fw-normal ps-md-5">
+						<li><a href="#" class="nav_link">Overview</a></li>
+						<li><a href="#" class="nav_link">Updates</a></li>
+						<li><a href="#" class="nav_link">Reports</a></li>
+					</ul>
+				</div>
 				<a href="<?php echo base_url('enquiry/daily_report'); ?>" class="nav_link"> <i class='bx bx-user nav_icon' data-bs-toggle="tooltip" data-bs-placement="right" title="Daily Report"></i> <span class="nav_name">Daily Report</span> </a>
+				
 			</div>
 		</div>
 	</nav>

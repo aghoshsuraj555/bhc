@@ -13,11 +13,11 @@ $methods = array('Y', 'N');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="patientid" class="form-label">Patient ID</label>
-                            <input type="text" class="form-control required" name="patientid" id="patientid" value="<?php echo $refno;?>" readonly>
+                            <input type="text" class="form-control required req-field" name="patientid" id="patientid" value="<?php echo $refno;?>" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="name" class="form-label">Patient Name</label>
-                            <input type="text" class="form-control required" name="name" id="name" placeholder="Name">
+                            <input type="text" class="form-control required req-field" name="name" id="name" placeholder="Name">
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Email ID</label>
@@ -25,11 +25,11 @@ $methods = array('Y', 'N');
                         </div>
                         <div class="col-md-6">
                             <label for="contactno" class="form-label">Contact Number</label>
-                            <input type="text" class="form-control required" id="contactno" name="contactno" placeholder="Contact Number">
+                            <input type="text" class="form-control required req-field" id="contactno" name="contactno" placeholder="Contact Number">
                         </div>
                         <div class="col-md-6">
                             <label for="whatsappno" class="form-label">WhatsApp Number</label>
-                            <input type="text" class="form-control required" id="whatsappno" name="whatsappno" placeholder="WhatsApp Number">
+                            <input type="text" class="form-control required req-field" id="whatsappno" name="whatsappno" placeholder="WhatsApp Number">
                         </div>
                         <div class="col-md-6">
                             <label for="dob" class="form-label">Date of Birth</label>
@@ -52,11 +52,11 @@ $methods = array('Y', 'N');
                         </div>
                         <div class="col-md-6">
                             <label for="city" class="form-label">City</label>
-                            <input type="text" class="form-control required" name="city" id="city" placeholder="City">
+                            <input type="text" class="form-control required req-field" name="city" id="city" placeholder="City">
                         </div>
                         <div class="col-md-6">
                             <label for="state" class="form-label">State/Province</label>
-                            <input type="text" class="form-control required" id="state" name="state" placeholder="State">
+                            <input type="text" class="form-control required req-field" id="state" name="state" placeholder="State">
                         </div>
                         <div class="col-md-6">
                             <label for="pincode" class="form-label">Pincode</label>
@@ -64,7 +64,7 @@ $methods = array('Y', 'N');
                         </div>
                         <div class="col-md-6">
                             <label for="nri" class="form-label">NRI</label>
-                            <select id="nri" name="nri" class="form-select required">
+                            <select id="nri" name="nri" class="form-select required req-field">
                                 <option value="">Choose...</option>
                                 <?php
                                 foreach ($nris as $nri) {
@@ -105,11 +105,11 @@ $methods = array('Y', 'N');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="enquiry-date" class="form-label">Enquiry Date</label>
-                            <input type="text" class="form-control disable datepicker required" name="enquirydate" id="enquirydate">
+                            <input type="text" class="form-control disable datepicker required req-field" name="enquirydate" id="enquirydate">
                         </div>
                         <div class="col-md-6">
                             <label for="source" class="form-label">Source</label>
-                            <select id="source" name="source" class="form-select required">
+                            <select id="source" name="source" class="form-select required req-field">
                                 <option value="">Choose...</option>
                                 <?php foreach ($sources as $source) {
                                 ?>

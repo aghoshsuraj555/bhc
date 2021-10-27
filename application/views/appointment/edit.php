@@ -17,12 +17,12 @@ echo form_open('appointment/update/'.$appointment->patient_id.'/'.$appointment->
         </div>
         <div class="col-md-6">
             <label for="appointmentdate" class="form-label">Appointment Date</label>
-            <input type="text" class="form-control disable datepicker required" name="appointmentdate" id="appointmentdate" value="<?php echo date('d-m-Y',strtotime($appointment->appointment_date));?>">
+            <input type="text" class="form-control disable datepicker required req-field" name="appointmentdate" id="appointmentdate" value="<?php echo date('d-m-Y',strtotime($appointment->appointment_date));?>">
             <?php echo form_error('appointmentdate', '<label class="error">', '</label>'); ?>
         </div>
         <div class="col-md-6">
             <label for="enquiry-date" class="form-label">Appointment Time</label>
-            <input type="text" class="form-control disable timepicker required" name="appointmenttime" id="appointmenttime" value="<?php echo date('h:i a',strtotime($appointment->appointment_time));?>">
+            <input type="text" class="form-control disable timepicker required req-field" name="appointmenttime" id="appointmenttime" value="<?php echo date('h:i a',strtotime($appointment->appointment_time));?>">
         </div>
         <div class="col-md-6">
             <label for="service" class="form-label">Service</label>
@@ -38,7 +38,7 @@ echo form_open('appointment/update/'.$appointment->patient_id.'/'.$appointment->
         </div>
         <div class="col-md-6">
             <label for="enquiry-date" class="form-label">Message</label>
-            <textarea type="text" class="form-control disable required" name="message" id="message"><?php echo $appointment->message;?></textarea>
+            <textarea type="text" class="form-control disable required req-field" name="message" id="message"><?php echo $appointment->message;?></textarea>
             <?php echo form_error('message', '<label class="error">', '</label>'); ?>
         </div>
         <div class="col-md-6">
