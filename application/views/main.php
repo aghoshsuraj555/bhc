@@ -17,9 +17,9 @@
     <title>BHC</title>
 </head>
 
-<body id="body-pd" class="position-relative body-pd overflow-hidden">
+<body id="body-pd" class="position-relative body-pd">
     <?php echo $header; ?>
-    <div class="height-100 bg-light">
+    <div class="bg-light">
         <?php echo $content; ?>
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -41,13 +41,13 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-
+		
         const showNavbar = (toggleId, navId, bodyId, headerId) => {
             const toggle = document.getElementById(toggleId),
                 nav = document.getElementById(navId),
                 bodypd = document.getElementById(bodyId),
                 headerpd = document.getElementById(headerId)
-
+				
             // Validate that all variables exist
             if (toggle && nav && bodypd && headerpd) {
                 toggle.addEventListener('click', () => {
@@ -57,8 +57,10 @@
                     bodypd.classList.toggle('body-pd')
                     // add padding to header
                     headerpd.classList.toggle('body-pd')
+					
                 })
             }
+			
         }
 
         showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
@@ -76,6 +78,12 @@
 
         // Your code to run since DOM is loaded and ready
     });
+</script>
+<script>
+	const toggle = document.querySelector('#header-toggle');
+	toggle.addEventListener('click',() => {
+		document.querySelector('#iconId').classList.toggle('icon-show');
+	});
 </script>
 <!-- <script src="<?php echo base_url('public/assets/js/popper.js'); ?>"></script> -->
 <!-- <script src="<?php echo base_url('public/assets/js/bootstrap.min.js'); ?>"></script> -->

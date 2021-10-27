@@ -7,7 +7,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
     ?>
     <div class="table-heading d-flex align-items-center justify-content-between p-2">
         <p class="fs-2">Patients</p>
-        <a class="btn btn-primary float-end" href="<?php echo base_url('patient/add') ?>">Add</a>
+        <a class="btn btn-primary button-primary float-end" href="<?php echo base_url('patient/add') ?>">Add</a>
     </div>
     <?php echo form_open_multipart('patient/lists/', array('id' => 'form')); ?>
     <div class="table-responsive">
@@ -29,7 +29,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
                     <td><input type="text" class="form-control" name="contactno" id="contactno" value="<?php echo set_value('contactno');?>"></td>
                     <td><input type="text" class="form-control" name="whatsappno" id="whatsappno" value="<?php echo set_value('whatsappno');?>"></td>
                     <td><input type="text" class="form-control daterange_picker" name="daterange" id="daterange" value="<?php echo set_value('daterange');?>"></td>
-                    <td><input type="submit" class="btn btn-success" value="Search"></td>
+                    <td><input type="submit" class="btn btn-success button-rose" value="Search"></td>
                 </tr>
                 <?php
                 $i = 1;

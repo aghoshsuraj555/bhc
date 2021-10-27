@@ -8,6 +8,8 @@
 :root {
     --button-color-primary: rgba(153, 5, 34, 0.808);
     --button-color-primary-hover: rgba(153, 5, 34, 0.7);
+    --button-color-rose: #7c5161;
+    --button-color-rose-hover: #960000;
 }
 
 body {
@@ -77,28 +79,48 @@ a {
     text-decoration: none !important;
 }
 
-.btn-primary {
+.active-dropdown {
+    display: none;
+}
+
+.button-primary {
     background-color: var(--button-color-primary) !important;
     color: white !important;
     box-shadow: none !important;
     border: 1px solid var(--button-color-primary) !important;
 }
 
-.active-dropdown {
-    display: none;
-}
-
-.btn-primary:hover {
+.button-primary:hover {
     background-color: var(--button-color-primary-hover) !important;
     box-shadow: none !important;
     border: 1px solid var(--button-color-primary-hover) !important;
 }
 
-.btn-primary:focus,
-.btn-primary:focus:active {
+.button-primary:focus,
+.button-primary:focus:active {
     box-shadow: none !important;
     background-color: var(--button-color-primary-hover) !important;
     border: 1px solid var(--button-color-primary-hover) !important;
+}
+
+.button-rose {
+    background-color: var(--button-color-rose) !important;
+    color: white !important;
+    box-shadow: none !important;
+    border: 1px solid var(--button-color-rose) !important;
+}
+
+.button-rose:hover {
+    background-color: var(--button-color-rose-hover) !important;
+    box-shadow: none !important;
+    border: 1px solid var(--button-color-rose-hover) !important;
+}
+
+.button-rose:focus,
+.button-rose:focus:active {
+    box-shadow: none !important;
+    background-color: var(--button-color-rose-hover) !important;
+    border: 1px solid var(--button-color-rose-hover) !important;
 }
 
 .nav_logo,
@@ -141,6 +163,16 @@ a {
     font-size: 1.25rem;
 }
 
+.icon-show {
+    padding: 2px;
+}
+
+.icon-show img {
+    width: 3rem;
+    height: 3rem;
+    transition: all ease-in-out .5s;
+}
+
 .show-side {
     left: 0;
 }
@@ -178,6 +210,7 @@ a {
     .header-image {
         width: 10rem;
         height: 6rem;
+        transition: all ease-in-out 1s;
     }
     .header_img {
         width: 40px;

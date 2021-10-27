@@ -8,7 +8,7 @@ $statusarray = array('Y'=>'Active','N'=>'Deactive','classY'=>'success','classN'=
     <div class="form-control mx-auto">
         <div class="table-heading d-flex align-items-center justify-content-between p-2">
             <p class="fs-2">Roles</p>
-            <button class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="@mdo">Add</button>
+            <button class="btn btn-primary button-primary float-end" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="@mdo">Add</button>
         </div>
         <div class="table-responsive">
             <table class="table align-middle table-bordered table-hover table-responsive-sm">
