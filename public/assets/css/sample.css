@@ -181,6 +181,12 @@ a {
     border: 1px solid var(--button-color-custom-hover) !important;
 }
 
+.nav_link img {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(100%);
+}
+
 .nav_logo,
 .nav_link {
     display: grid;
