@@ -10,6 +10,8 @@
     --button-color-primary-hover: rgba(153, 5, 34, 0.7);
     --button-color-search: #7c5161;
     --button-color-search-hover: #960000;
+    --button-color-custom: #242424;
+    --button-color-custom-hover: #363636;
 }
 
 
@@ -157,6 +159,26 @@ a {
     box-shadow: none !important;
     background-color: var(--button-color-search-hover) !important;
     border: 1px solid var(--button-color-search-hover) !important;
+}
+
+.button-custom {
+    background-color: var(--button-color-custom) !important;
+    color: white !important;
+    box-shadow: none !important;
+    border: 1px solid var(--button-color-custom) !important;
+}
+
+.button-custom:hover {
+    background-color: var(--button-color-custom-hover) !important;
+    box-shadow: none !important;
+    border: 1px solid var(--button-color-custom-hover) !important;
+}
+
+.button-custom:focus,
+.button-custom:focus:active {
+    box-shadow: none !important;
+    background-color: var(--button-color-custom-hover) !important;
+    border: 1px solid var(--button-color-custom-hover) !important;
 }
 
 .nav_logo,
