@@ -29,7 +29,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
                     <td><input type="text" class="form-control" name="contactno" id="contactno" value="<?php echo set_value('contactno');?>"></td>
                     <td><input type="text" class="form-control" name="whatsappno" id="whatsappno" value="<?php echo set_value('whatsappno');?>"></td>
                     <td><input type="text" class="form-control daterange_picker" name="daterange" id="daterange" value="<?php echo set_value('daterange');?>"></td>
-                    <td><input type="submit" class="btn btn-success button-search" value="Search"></td>
+                    <td><input type="submit" class="btn btn-success" value="Search"><a href="<?php echo base_url('patient/lists');?>" class="btn btn-default">Reset</a></td>
                 </tr>
                 <?php
                 $i = 1;
