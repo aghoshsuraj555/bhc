@@ -53,7 +53,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
                         <td><input type="text" class="form-control daterange_picker" name="enquirydate" id="enquirydate" value="<?php echo set_value('enquirydate');?>"></td>
                         <td><input type="text" class="form-control daterange_picker" name="followupdate" id="followupdate" value="<?php echo set_value('enquirydate');?>"></td>
 
-                        <td><input type="submit" class="btn btn-success" value="Search"><a href="<?php echo base_url('enquiry/lists');?>" class="btn btn-default">Reset</a></td>
+                        <td><div class="d-flex"><input type="submit" class="btn btn-success me-1" value="Search"><a href="<?php echo base_url('enquiry/lists');?>" class="btn btn-dark">Reset</a></div></td>
                     </tr>
                     <?php
                     $i = 1;
