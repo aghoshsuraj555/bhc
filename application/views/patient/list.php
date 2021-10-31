@@ -9,7 +9,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
         <p class="fs-2">Patients</p>
         <a class="btn btn-primary button-primary float-end" href="<?php echo base_url('patient/add') ?>">Add</a>
     </div>
-    <?php echo form_open_multipart('patient/lists/', array('id' => 'form')); ?>
+    <?php echo form_open_multipart('patient/lists/'); ?>
     <div class="table-responsive">
         <table class="table align-middle table-bordered table-hover table-responsive-sm">
             <thead>

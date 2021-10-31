@@ -10,7 +10,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
             <p class="fs-2">Enquiry</p>
             <a class="btn btn-primary float-end" href="<?php echo base_url('enquiry/add') ?>">Add</a>
         </div>
-        <?php echo form_open_multipart('enquiry/lists/', array('id' => 'form')); ?>
+        <?php echo form_open_multipart('enquiry/lists/'); ?>
         <div class="table-responsive">
             <table class="table align-middle table-bordered table-hover table-responsive-sm">
                 <thead>

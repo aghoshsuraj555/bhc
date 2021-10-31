@@ -87,7 +87,7 @@ class Menu_model extends CI_Model
                 $role_menu.= "<div class='collapse' id='home-collapse'>
                 <ul class='btn-toggle-nav list-unstyled fw-normal ps-md-5'>";
                 foreach ($sub_menus as $sub_menu) :
-                    if($menu['url']){
+                    if($sub_menu['url']){
                         $url = base_url($sub_menu['url']);
                     }
                     else{

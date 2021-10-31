@@ -6,11 +6,11 @@
     <div class="table-responsive">
         <table class="table align-middle table-bordered table-hover table-responsive-sm">
             <thead>
-                <th scope="col"></th>
+                <th scope="col">Permission Name</th>
                 <?php
                 foreach ($roles as $role) {
                 ?>
-                    <th scope="col"><?php echo $role['name']; ?></th>
+                    <th scope="col" class="text-center"><?php echo $role['name']; ?></th>
                 <?php
                 }
                 ?>
@@ -52,11 +52,11 @@
     <div class="table-responsive">
         <table class="table align-middle table-bordered table-hover table-responsive-sm">
             <thead>
-                <th scope="col"></th>
+                <th scope="col">Menu</th>
                 <?php
                 foreach ($roles as $role) {
                 ?>
-                    <th scope="col"><?php echo $role['name']; ?></th>
+                    <th scope="col" class="text-center"><?php echo $role['name']; ?></th>
                 <?php
                 }
                 ?>
