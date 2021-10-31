@@ -231,6 +231,10 @@ a {
     padding: 7px;
 }
 
+td .search-select {
+    width: 7rem;
+}
+
 .icon-show img {
     width: 3rem;
     height: 3rem;
