@@ -171,7 +171,7 @@ $methods = array('Y', 'N');
             </div>
         </div>
         <div class="d-flex align-items-center justify-content-end pe-5 my-4">
-            <input class="btn button" type="submit" value="Submit">
+            <input class="btn button-primary" type="submit" value="Submit">
         </div>
     </div>
     <?php echo form_close(); ?>

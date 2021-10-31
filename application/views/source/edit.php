@@ -2,7 +2,7 @@
 <div class="modal-body">
     <div class="mb-3">
         <label for="recipient-name" class="col-form-label">Name</label>
-        <input type="text" class="form-control required" name="name" id="name" value="<?php echo $source->name?>">
+        <input type="text" class="form-control req-field required" name="name" id="name" value="<?php echo $source->name?>">
     </div>
     <div class="col-md-6">
         <label for="status" class="form-label align-items-center">Status</label><br>
@@ -18,6 +18,6 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary button-primary">Submit</button>
 </div>
 <?php echo form_close(); ?>

@@ -79,7 +79,7 @@
                             }
                         ?>
                             <td align="center">
-                                <div class="checkbox checkbox-success m-t-0"><input type="checkbox" class="accessbox" id="menurole<?php echo $rolekey ?>-<?php echo $key ?>" name="menu_roleid<?php echo $role['id']; ?>[]" <?php echo $checked ?> <?php echo ($role['id'] == 1) ? 'disabled="disabled"' : '' ?> value="<?php echo $menu['id']; ?>" /><label for="menu_role<?php echo $rolekey ?>-<?php echo $key ?>"></label></div>
+                                <div><input type="checkbox" class="accessbox checkbox-lg" id="menurole<?php echo $rolekey ?>-<?php echo $key ?>" name="menu_roleid<?php echo $role['id']; ?>[]" <?php echo $checked ?> <?php echo ($role['id'] == 1) ? 'disabled="disabled"' : '' ?> value="<?php echo $menu['id']; ?>" /><label for="menu_role<?php echo $rolekey ?>-<?php echo $key ?>"></label></div>
                             </td>
                         <?php
                         }
@@ -93,7 +93,7 @@
         </table>
     </div>
     <div class="d-flex align-items-center justify-content-end pe-5 my-4">
-        <input class="btn button" type="submit" value="Submit">
+        <input class="btn button-primary" type="submit" value="Submit">
     </div>
     <?php echo form_close(); ?>
 </div>

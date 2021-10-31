@@ -56,7 +56,7 @@ echo form_open('appointment/update/'.$appointment->patient_id.'/'.$appointment->
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary editAjaxPopup">Submit</button>
+    <button type="submit" class="btn btn-primary button-primary editAjaxPopup">Submit</button>
 </div>
 <?php echo form_close(); ?>
 <script>

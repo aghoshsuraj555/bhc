@@ -8,7 +8,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
     <div class="form-control mx-auto">
         <div class="table-heading d-flex align-items-center justify-content-between p-2">
             <p class="fs-2">Users</p>
-            <a class="btn btn-primary float-end" href="<?php echo base_url('user/add') ?>">Add</a>
+            <a class="btn btn-primary button-primary float-end" href="<?php echo base_url('user/add') ?>">Add</a>
         </div>
         <div class="table-responsive">
             <table class="table align-middle table-bordered table-hover table-responsive-sm">
@@ -35,12 +35,12 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn btn-secondary" href="<?php echo base_url('user/edit/' . $user['user_id'].'/'. $return) ?>">Edit</a>
-                                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                                        <!-- <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
                                             <span class="visually-hidden">Toggle Dropdown</span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                                             <li><a class="dropdown-item" href="<?php echo base_url('user/edit/' . $user['user_id'].'/'.$return) ?>">Edit</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </div>
                                 </td>
                             </tr>

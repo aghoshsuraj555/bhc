@@ -8,7 +8,7 @@ $statusarray = array('Y'=>'Active','N'=>'Deactive','classY'=>'success','classN'=
     <div class="form-control mx-auto">
         <div class="table-heading d-flex align-items-center justify-content-between p-2">
             <p class="fs-2">Services</p>
-            <button class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="@mdo">Add</button>
+            <button class="btn btn-primary button-primary float-end" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever="@mdo">Add</button>
         </div>
         <div class="table-responsive">
             <table class="table align-middle table-bordered table-hover table-responsive-sm">
@@ -28,13 +28,13 @@ $statusarray = array('Y'=>'Active','N'=>'Deactive','classY'=>'success','classN'=
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-secondary get-details" data-bs-toggle="modal" url="<?php echo base_url('service/edit/' . $service['id']) ?>" data-bs-target="#editModal" data-bs-whatever="@mdo">Edit</button>
-                                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                                        <!-- <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
                                             <span class="visually-hidden">Toggle Dropdown</span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                                             <li><a class="dropdown-item get-details" href="javascript:void(0)" data-bs-toggle="modal" url="<?php echo base_url('service/edit/' . $service['id'] . '/' . $return) ?>" data-bs-target="#editModal" data-bs-whatever="@mdo">Edit</a></li>
                                             <li><a class="dropdown-item deleteModal" href="javascript:void(0)" data-bs-toggle="modal" url="<?php echo base_url('service/delete/' . $service['id'] . '/' . $return) ?>" data-bs-target="#deleteModal" data-bs-whatever="@mdo">Delete</a></li>
-                                        </ul>
+                                        </ul> -->
                                     </div>
                                 </td>
                             </tr>
@@ -84,7 +84,7 @@ $statusarray = array('Y'=>'Active','N'=>'Deactive','classY'=>'success','classN'=
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary button-primary">Submit</button>
                 </div>
                 <?php echo form_close(); ?>
             </div>

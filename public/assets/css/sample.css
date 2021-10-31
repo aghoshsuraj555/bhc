@@ -272,6 +272,12 @@ td .search-select {
     transition: all ease-in-out .5s;
 }
 
+.accessbox {
+    /* padding: 5px; */
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
 @media screen and (min-width: 768px) {
     body {
         margin: calc(3rem + 1rem) 0 0 0;

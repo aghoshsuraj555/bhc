@@ -3,8 +3,8 @@
 	<!-- <div class="header_img d-flex justify-content-center rounded-circle overflow-hidden"> <img src="/final/images/profile.jpg" alt=""> </div> -->
 	<div class="d-flex justify-content-between ">
 	<?php echo form_open('home/set_branch'); ?>
-		<div class="branch pe-md-5">
-			<label for="branch-name">Branch </label>
+		<div class="d-flex align-items-center branch pe-md-5">
+			<label for="branch-name" class="pe-2">Branch </label>
 			<select id="branch" name="branch" class="form-select" onchange="this.form.submit()">
 				<?php
 				foreach ($branches as $branch) {
