@@ -29,8 +29,8 @@ class User extends Controller
     {
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
-        $this->form_validation->set_rules('contactno', 'Contact Number', 'required');
-        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required');
+        $this->form_validation->set_rules('contactno', 'Contact Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
+        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
         $this->form_validation->set_rules('email', 'Email Id', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('role', 'Role', 'required');
@@ -56,6 +56,7 @@ class User extends Controller
                 'username' => $this->input->post('username'),
                 'password' => md5($this->input->post('password')),
                 'role_id' => $this->input->post('role'),
+                'branch_id' => $this->input->post('branch'),
                 'status' => $this->input->post('status')
             );
             $path = 'public/uploads/user/';
@@ -88,8 +89,8 @@ class User extends Controller
     {
         $this->form_validation->set_rules('fname', 'First Name', 'required');
         $this->form_validation->set_rules('lname', 'Last Name', 'required');
-        $this->form_validation->set_rules('contactno', 'Contact Number', 'required');
-        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required');
+        $this->form_validation->set_rules('contactno', 'Contact Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
+        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
         $this->form_validation->set_rules('email', 'Email Id', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|callback_username_exists');
         $this->form_validation->set_rules('role', 'Role', 'required');
@@ -113,8 +114,8 @@ class User extends Controller
                 'whatsappno' => $this->input->post('whatsappno'),
                 'email_id' => $this->input->post('email'),
                 'username' => $this->input->post('username'),
-                'password' => md5($this->input->post('password')),
                 'role_id' => $this->input->post('role'),
+                'branch_id' => $this->input->post('branch'),
                 'status' => $this->input->post('status')
             );
             $path = 'public/uploads/user/';
@@ -122,6 +123,9 @@ class User extends Controller
             $config['allowed_types'] = 'gif|jpg|png';
             $this->load->library('upload', $config);
             $this->upload->initialize($config);
+            if($this->input->post('password')){
+                $data['password'] = md5($this->input->post('password'));
+            }
             if ($this->upload->do_upload('image')) {
                 $image =  $this->upload->data();
                 $data = $image['file_name'];
@@ -163,7 +167,7 @@ class User extends Controller
     function username_exists($code)
 	{
 		$id = $this->input->post('id');
-		if ($this->Users_model->username_exists($code,$id))
+		if ($this->User_model->username_exists($code,$id))
 		{
 			$this->form_validation->set_message('username_exists', 'already exists');
 			return FALSE;

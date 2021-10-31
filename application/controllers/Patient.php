@@ -38,8 +38,8 @@ class Patient extends Controller
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('email', 'Email ID', 'required');
-        $this->form_validation->set_rules('contactno', 'Contact Number', 'required');
-        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required');
+        $this->form_validation->set_rules('contactno', 'Contact Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
+        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
         $this->form_validation->set_rules('city', 'City', 'required');
         $this->form_validation->set_rules('state', 'State/Province', 'required');
         $this->form_validation->set_rules('pincode', 'Pincode', 'required');
@@ -112,8 +112,8 @@ class Patient extends Controller
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('email', 'Email ID', 'required');
-        $this->form_validation->set_rules('contactno', 'Contact Number', 'required');
-        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required');
+        $this->form_validation->set_rules('contactno', 'Contact Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
+        $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
         $this->form_validation->set_rules('city', 'City', 'required');
         $this->form_validation->set_rules('state', 'State/Province', 'required');
         $this->form_validation->set_rules('pincode', 'Pincode', 'required');

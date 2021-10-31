@@ -79,6 +79,17 @@
                             </select>
                         </div>
                         <div class="col-md-6">
+                            <label for="role" class="form-label">Branch</label>
+                            <select id="branch" name="branch" class="form-select required">
+                                <option value="">Choose...</option>
+                                <?php
+                                foreach ($branches as $branch) {
+                                ?>
+                                    <option value="<?php echo $branch['id']; ?>"<?php echo ($branch['id']==$user->branch_id)?'selected="selected"':'';?>><?php echo $branch['name']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
                             <label for="passwword" class="form-label">Password</label>
                             <input type="password" class="form-control required" id="password" name="password" placeholder="Password" autocomplete="off">
                         </div>
