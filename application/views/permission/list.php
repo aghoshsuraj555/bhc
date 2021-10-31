@@ -1,5 +1,5 @@
 <div class="mx-auto">
-    <?php echo form_open_multipart('patient/lists/', array('id' => 'form')); ?>
+    <?php echo form_open_multipart('permission', array('id' => 'form')); ?>
     <div class="table-heading d-flex align-items-center justify-content-between p-2">
         <p class="fs-2">Permissions</p>
     </div>
@@ -79,7 +79,7 @@
                             }
                         ?>
                             <td align="center">
-                                <div class="checkbox checkbox-success m-t-0"><input type="checkbox" class="accessbox" id="role<?php echo $rolekey ?>-<?php echo $key ?>" name="roleid<?php echo $role['id']; ?>[]" <?php echo $checked ?> <?php echo ($role['id'] == 1) ? 'disabled="disabled"' : '' ?> value="<?php echo $menu['id']; ?>" /><label for="role<?php echo $rolekey ?>-<?php echo $key ?>"></label></div>
+                                <div class="checkbox checkbox-success m-t-0"><input type="checkbox" class="accessbox" id="menurole<?php echo $rolekey ?>-<?php echo $key ?>" name="menu_roleid<?php echo $role['id']; ?>[]" <?php echo $checked ?> <?php echo ($role['id'] == 1) ? 'disabled="disabled"' : '' ?> value="<?php echo $menu['id']; ?>" /><label for="menu_role<?php echo $rolekey ?>-<?php echo $key ?>"></label></div>
                             </td>
                         <?php
                         }
@@ -91,6 +91,9 @@
                 ?>
             </tbody>
         </table>
+    </div>
+    <div class="d-flex align-items-center justify-content-end pe-5 my-4">
+        <input class="btn button" type="submit" value="Submit">
     </div>
     <?php echo form_close(); ?>
 </div>

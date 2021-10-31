@@ -4,11 +4,14 @@ class Controller extends CI_Controller {
     function __construct()
     {
         parent::__construct();
+        $this->load->model('Menu_model');
+        $this->load->model('Branch_model');
     }
 	
 	public function header()
 	{
-        $header = '';
+        $header['branches'] = $this->Branch_model->get_active();
+        $header['menu'] = $this->Menu_model->get_role_menu();
 		return $this->load->view('include/header',$header,true);
 	}
 

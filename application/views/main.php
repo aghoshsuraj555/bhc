@@ -41,13 +41,13 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-		
+
         const showNavbar = (toggleId, navId, bodyId, headerId) => {
             const toggle = document.getElementById(toggleId),
                 nav = document.getElementById(navId),
                 bodypd = document.getElementById(bodyId),
                 headerpd = document.getElementById(headerId)
-				
+
             // Validate that all variables exist
             if (toggle && nav && bodypd && headerpd) {
                 toggle.addEventListener('click', () => {
@@ -57,10 +57,10 @@
                     bodypd.classList.toggle('body-pd')
                     // add padding to header
                     headerpd.classList.toggle('body-pd')
-					
+
                 })
             }
-			
+
         }
 
         showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
@@ -80,10 +80,10 @@
     });
 </script>
 <script>
-	const toggle = document.querySelector('#header-toggle');
-	toggle.addEventListener('click',() => {
-		document.querySelector('#iconId').classList.toggle('icon-show');
-	});
+    const toggle = document.querySelector('#header-toggle');
+    toggle.addEventListener('click', () => {
+        document.querySelector('#iconId').classList.toggle('icon-show');
+    });
 </script>
 <!-- <script src="<?php echo base_url('public/assets/js/popper.js'); ?>"></script> -->
 <!-- <script src="<?php echo base_url('public/assets/js/bootstrap.min.js'); ?>"></script> -->
@@ -199,9 +199,25 @@
 
         $('.search-select').select2();
         $('.timepicker').timepicker({});
+        jQuery.validator.addMethod("phone_number", function(phone_number, element) {
+            phone_number = phone_number.replace(/\s+/g, "");
+            return this.optional(element) || phone_number.match(/[0-9]/);
+        }, "Please specify a valid phone number");
+
         $('#form').validate({
             rules: {
-
+                contactno: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 15,
+                    phone_number: true
+                },
+                whatsappno: {
+                    required: true,
+                    minlength: 8,
+                    maxlength: 15,
+                    phone_number: true
+                }
             }
         });
         $('#get-details').on('click', '#form', function() {
@@ -230,29 +246,27 @@
     });
 </script>
 <script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-  var dropdownContent = this.nextElementSibling;
-  if (dropdownContent.style.display === "block") {
-  dropdownContent.style.display = "none";
-  } else {
-  dropdownContent.style.display = "block";
-  }
-  });
-}
-let arrow = document.querySelectorAll(".arrow");
-for (var i = 0; i < arrow.length; i++) {
-    arrow[i].addEventListener("click", (e) => {
-        let arrowParent = e.target.parentElement.parentElement; //selecting main parent of arrow
-        arrowParent.classList.toggle("active-dropdown");
-    });
-}
-
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e) => {
+            let arrowParent = e.target.parentElement.parentElement; //selecting main parent of arrow
+            arrowParent.classList.toggle("active-dropdown");
+        });
+    }
 </script>
-
 
 </html>

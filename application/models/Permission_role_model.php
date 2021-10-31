@@ -63,5 +63,10 @@ class Permission_role_model extends CI_Model {
 		$cond[$this->primary_key]=$id;
 		return $this->db->delete($this->table_name,$cond);
 	}
+    
+    function truncate()
+    {
+        return $this->db->empty_table($this->table_name);
+    }
 	
 }
