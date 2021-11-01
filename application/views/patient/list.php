@@ -46,12 +46,12 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
                             <td>
                                 <div class="btn-group">
                                     <a class="btn btn-secondary" href="<?php echo base_url('patient/edit/' . $patient['id'] . '/' . $return) ?>">Edit</a>
-                                    <!-- <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
                                         <span class="visually-hidden">Toggle Dropdown</span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                                         <li><a class="dropdown-item" href="<?php echo base_url('patient/edit/' . $patient['id'] . '/' . $return) ?>">Edit</a></li>
-                                    </ul> -->
+                                    </ul>
                                 </div>
                             </td>
                         </tr>

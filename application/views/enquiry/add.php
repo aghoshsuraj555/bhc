@@ -12,7 +12,7 @@ $nris = array('Yes', 'No');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="patient-name" class="form-label">Name</label>
-                            <input type="text" class="form-control required req-field" id="name" name="name" placeholder="Name">
+                            <input type="text" class="form-control required" id="name" name="name" placeholder="Name">
                         </div>
                         <div class="col-6">
                             <label for="email" class="form-label">Email ID</label>
@@ -20,11 +20,11 @@ $nris = array('Yes', 'No');
                         </div>
                         <div class="col-md-6">
                             <label for="contact-number" class="form-label">Contact Number</label>
-                            <input type="text" class="form-control required req-field" id="contactno" name="contactno" placeholder="Contact Number">
+                            <input type="text" class="form-control required" id="contactno" name="contactno" placeholder="Contact Number">
                         </div>
                         <div class="col-md-6">
-                            <label for="whatsapp-number" class="form-label">WhatsApp Number<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required req-field" id="whatsappno" name="whatsappno" placeholder="WhatsApp Number" required req-field>
+                            <label for="whatsapp-number" class="form-label">WhatsApp Number</label>
+                            <input type="text" class="form-control required" id="whatsappno" name="whatsappno" placeholder="WhatsApp Number" required>
                         </div>
                         <div class="col-md-6">
                             <label for="nri" class="form-label">Nri</label>
@@ -38,12 +38,12 @@ $nris = array('Yes', 'No');
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="city" class="form-label">City<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required req-field" id="city" name="city" placeholder="City" required req-field>
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control required" id="city" name="city" placeholder="City" required>
                         </div>
                         <div class="col-md-6">
                             <label for="state" class="form-label">State/Province<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required req-field" id="state" name="state" placeholder="State">
+                            <input type="text" class="form-control required" id="state" name="state" placeholder="State">
                         </div>
                         <div class="col-md-6">
                             <label for="pincode" class="form-label">Postal Code<span class="text-danger">*</span></label>
@@ -72,7 +72,7 @@ $nris = array('Yes', 'No');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="enquirydate" class="form-label">Enquiry Date</label>
-                            <input type="text" class="form-control disable datepicker required req-field" name="enquirydate" id="enquirydate">
+                            <input type="text" class="form-control disable datepicker required" name="enquirydate" id="enquirydate">
                         </div>
                         <div class="col-md-6">
                             <label for="source" class="form-label">Source</label>
@@ -98,11 +98,11 @@ $nris = array('Yes', 'No');
                         </div>
                         <div class="col-md-6 d-none" id="followup">
                             <label for="followupdate" class="form-label">Followup Date</label>
-                            <input type="text" class="form-control disable datepicker required req-field" name="followupdate" id="followupdate">
+                            <input type="text" class="form-control disable datepicker required" name="followupdate" id="followupdate">
                         </div>
                         <div class="col-md-6">
                             <label for="priority" class="form-label">Priority</label>
-                            <select id="priority" name="priority" class="form-select required req-field">
+                            <select id="priority" name="priority" class="form-select required">
                                 <option value="">Choose...</option>
                                 <?php
                                 foreach ($priorities as $priority) {

@@ -55,8 +55,8 @@ a {
     text-decoration: none;
 }
 
-.req-field {
-    border-left: 3px solid red;
+.required {
+    border-left: 3px solid rgba(153, 5, 34, 0.808);
 }
 
 .card-header {
