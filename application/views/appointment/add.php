@@ -59,11 +59,3 @@ echo form_open('appointment/add/'.$patient_id, array('id' => 'form')); ?>
     <button type="submit" class="btn btn-primary button-primary addAjaxPopup">Submit</button>
 </div>
 <?php echo form_close(); ?>
-<script>
-    $(document).ready(function() {
-        $('.timepicker').timepicker({});
-        $(".datepicker").datepicker({
-            dateFormat: 'dd-mm-yy'
-        });
-    });
-</script>
