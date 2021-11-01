@@ -68,5 +68,18 @@ class Menu_role_model extends CI_Model {
     {
         return $this->db->empty_table($this->table_name);
     }
+
+    function get_role_menuId()
+    {
+        $menu = [];
+        $this->db->select('*');
+        $this->db->from('menu_roles');
+        $this->db->where('role_id', $this->session->userdata('role'));
+        $query = $this->db->get()->result_array();
+        foreach ($query as $queryVal) {
+            array_push($menu, $queryVal['menu_id']);
+        }
+        return $menu;
+    }
 	
 }
