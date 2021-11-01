@@ -117,6 +117,10 @@
                 dataType: "json",
                 success: function(data) {
                     $('#ajaxPopform').html(data.view);
+                    $('.timepicker').timepicker({});
+                    $(".datepicker").datepicker({
+                        dateFormat: 'dd-mm-yy'
+                    });
                 }
             });
         });
@@ -131,9 +135,17 @@
                 success: function(data) {
                     if (data.type == 'error') {
                         $('#ajaxPopform').html(data.view);
+                        $('.timepicker').timepicker({});
+                        $(".datepicker").datepicker({
+                            dateFormat: 'dd-mm-yy'
+                        });
                     } else {
                         $(".modal").modal("hide");
                         $('#getAllDetails').html(data.view);
+                        $('.timepicker').timepicker({});
+                        $(".datepicker").datepicker({
+                            dateFormat: 'dd-mm-yy'
+                        });
                     }
                 },
                 error: function() {
@@ -153,9 +165,17 @@
                 success: function(data) {
                     if (data.type == 'error') {
                         $('#get-details').html(data.view);
+                        $('.timepicker').timepicker({});
+                        $(".datepicker").datepicker({
+                            dateFormat: 'dd-mm-yy'
+                        });
                     } else {
                         $(".modal").modal("hide");
                         $('#getAllDetails').html(data.view);
+                        $('.timepicker').timepicker({});
+                        $(".datepicker").datepicker({
+                            dateFormat: 'dd-mm-yy'
+                        });
                     }
                 },
                 error: function() {
@@ -170,6 +190,10 @@
                 url: url,
                 success: function(result) {
                     $('#get-details').html(result);
+                    $('.timepicker').timepicker({});
+                    $(".datepicker").datepicker({
+                        dateFormat: 'dd-mm-yy'
+                    });
                 }
             });
         });
@@ -243,6 +267,9 @@
                 }
             });
         }
+        $('#getAllDetails').on('click','.timepicker',function(){
+           $('.ui-timepicker-container').addClass('.popup-timepicker');
+        });
     });
 </script>
 <script>
