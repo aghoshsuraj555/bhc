@@ -6,6 +6,10 @@ class Controller extends CI_Controller {
         parent::__construct();
         $this->load->model('Menu_model');
         $this->load->model('Branch_model');
+        if(!$this->session->userdata('client_logged_in'))
+		{
+		   redirect('login');		
+		}
     }
 	
 	public function header()

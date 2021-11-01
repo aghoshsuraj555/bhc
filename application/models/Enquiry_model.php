@@ -25,13 +25,10 @@ class Enquiry_model extends CI_Model
             $this->db->like("$this->table_name.name", @$post['name']);
         }
         if (@$post['contactno']) {
-            $this->db->like('contactno', @$post['contactno']);
+            $this->db->like("$this->table_name.contactno", @$post['contactno']);
         }
         if (@$post['whatsappno']) {
-            $this->db->like('whatsappno', @$post['whatsappno']);
-        }
-        if (@$post['enquiry_status']) {
-            $this->db->where('enquiry_status_id', @$post['enquiry_status']);
+            $this->db->like("$this->table_name.whatsappno", @$post['whatsappno']);
         }
         if (@$post['enquirydate']) {
             $enquiryDate = explode('-', $post['enquirydate']);
@@ -65,10 +62,10 @@ class Enquiry_model extends CI_Model
             $this->db->like("$this->table_name.name", @$post['name']);
         }
         if (@$post['contactno']) {
-            $this->db->like('contactno', @$post['contactno']);
+            $this->db->like("$this->table_name.contactno", @$post['contactno']);
         }
         if (@$post['whatsappno']) {
-            $this->db->like('whatsappno', @$post['whatsappno']);
+            $this->db->like("$this->table_name.whatsappno", @$post['whatsappno']);
         }
         if (@$post['enquiry_status']) {
             $this->db->where('enquiry_status_id', @$post['enquiry_status']);

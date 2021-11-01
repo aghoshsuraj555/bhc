@@ -65,7 +65,7 @@ class Patient_model extends CI_Model
         if (@$post['contactno']) {
             $this->db->like('contactno', @$post['contactno']);
         }
-        if (@$post['contactno']) {
+        if (@$post['whatsappno']) {
             $this->db->like('whatsappno', @$post['whatsappno']);
         }
         if (@$post['daterange']) {

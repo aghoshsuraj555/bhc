@@ -43,11 +43,11 @@ $nris = array('Yes', 'No');
                         </div>
                         <div class="col-md-6">
                             <label for="state" class="form-label">State/Province<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required req-field" id="state" name="state" placeholder="State" required req-field>
+                            <input type="text" class="form-control required req-field" id="state" name="state" placeholder="State">
                         </div>
                         <div class="col-md-6">
                             <label for="pincode" class="form-label">Postal Code<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required req-field" id="pincode" name="pincode" placeholder="pincode" required req-field>
+                            <input type="text" class="form-control required" id="pincode" name="pincode" placeholder="pincode">
                         </div>
                         <div class="col-md-6">
                             <label for="nationality" class="form-label">Nationality</label>

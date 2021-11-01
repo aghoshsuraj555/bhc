@@ -39,11 +39,15 @@ $nris = array('Yes', 'No');
                         </div>
                         <div class="col-md-6">
                             <label for="city" class="form-label">City<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required req-field" id="city" name="city" value="<?php echo $enquiry->city;?>" placeholder="City" required req-field>
+                            <input type="text" class="form-control required req-field" id="city" name="city" value="<?php echo $enquiry->city;?>" placeholder="City">
                         </div>
                         <div class="col-md-6">
                             <label for="state" class="form-label">State/Province<span class="text-danger">*</span></label>
-                            <input type="text" class="form-control required req-field" id="state" name="state" value="<?php echo $enquiry->state;?>" placeholder="State" required req-field>
+                            <input type="text" class="form-control required req-field" id="state" name="state" value="<?php echo $enquiry->state;?>" placeholder="State">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pincode" class="form-label">Postal Code<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control required req-field" id="pincode" name="pincode" placeholder="pincode" value="<?php echo $enquiry->pincode;?>">
                         </div>
                         <div class="col-md-6">
                             <label for="nationality" class="form-label">Nationality</label>
