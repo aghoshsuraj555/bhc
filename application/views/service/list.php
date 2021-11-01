@@ -68,7 +68,7 @@ $statusarray = array('Y'=>'Active','N'=>'Deactive','classY'=>'success','classN'=
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Name</label>
-                        <input type="text" class="form-control required req-field" name="name" id="name">
+                        <input type="text" class="form-control" name="name" id="name">
                     </div>
                     <div class="col-md-6">
                         <label for="status" class="form-label align-items-center">Status</label><br>

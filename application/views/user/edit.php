@@ -8,11 +8,11 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="fname" class="form-label">First Name</label>
-                            <input type="text" class="form-control req-field required" id="fname" name="fname" value="<?php echo $user->fname;?>" placeholder="First Name">
+                            <input type="text" class="form-control required" id="fname" name="fname" value="<?php echo $user->fname;?>" placeholder="First Name">
                         </div>
                         <div class="col-md-6">
                             <label for="lname" class="form-label">Last Name</label>
-                            <input type="text" class="form-control req-field required" id="lname" name="lname" value="<?php echo $user->lname;?>" placeholder="Last Name">
+                            <input type="text" class="form-control required" id="lname" name="lname" value="<?php echo $user->lname;?>" placeholder="Last Name">
                         </div>
                         <div class="col-md-6">
                             <label for="jobtitle" class="form-label">Job Title</label>
@@ -44,15 +44,15 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="contactno" class="form-label">Contact Number</label>
-                            <input type="text" class="form-control req-field required" id="contactno" name="contactno"  value="<?php echo $user->contactno;?>" placeholder="Contact Number">
+                            <input type="text" class="form-control required" id="contactno" name="contactno"  value="<?php echo $user->contactno;?>" placeholder="Contact Number">
                         </div>
                         <div class="col-md-6">
                             <label for="whatsappno" class="form-label">WhatsApp Number</label>
-                            <input type="text" class="form-control req-field required" id="whatsappno" name="whatsappno"  value="<?php echo $user->whatsappno;?>" placeholder="WhatsApp Number">
+                            <input type="text" class="form-control required" id="whatsappno" name="whatsappno"  value="<?php echo $user->whatsappno;?>" placeholder="WhatsApp Number">
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Email Id</label>
-                            <input type="text" class="form-control req-field required" id="email" name="email"  value="<?php echo $user->email_id;?>" placeholder="Email Id">
+                            <input type="text" class="form-control required" id="email" name="email"  value="<?php echo $user->email_id;?>" placeholder="Email Id">
                         </div>
                     </div>
                 </div>
@@ -65,11 +65,11 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control req-field required" id="username" name="username"  value="<?php echo $user->username;?>" placeholder="Username" autocomplete="off">
+                            <input type="text" class="form-control required" id="username" name="username"  value="<?php echo $user->username;?>" placeholder="Username" autocomplete="off">
                         </div>
                         <div class="col-md-6">
                             <label for="role" class="form-label">Role</label>
-                            <select id="role" name="role" class="form-select req-field required">
+                            <select id="role" name="role" class="form-select required">
                                 <option value="">Choose...</option>
                                 <?php
                                 foreach ($roles as $role) {
@@ -80,7 +80,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="role" class="form-label">Branch</label>
-                            <select id="branch" name="branch" class="form-select req-field required">
+                            <select id="branch" name="branch" class="form-select required">
                                 <option value="">Choose...</option>
                                 <?php
                                 foreach ($branches as $branch) {
@@ -91,7 +91,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="passwword" class="form-label">Password</label>
-                            <input type="password" class="form-control req-field required" id="password" name="password" placeholder="Password" autocomplete="off">
+                            <input type="password" class="form-control required" id="password" name="password" placeholder="Password" autocomplete="off">
                         </div>
                     </div>
                 </div>
