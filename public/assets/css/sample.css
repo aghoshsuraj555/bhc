@@ -55,6 +55,10 @@ a {
     text-decoration: none;
 }
 
+.popup-timepicker {
+    z-index: 1056 !important;
+}
+
 .required {
     border-left: 3px solid rgba(153, 5, 34, 0.808);
 }
