@@ -8,7 +8,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
     <div class="form-control mx-auto">
         <div class="table-heading d-flex align-items-center justify-content-between p-2">
             <p class="fs-2">Enquiry</p>
-            <a class="btn btn-primary float-end" href="<?php echo base_url('enquiry/add') ?>">Add</a>
+            <a class="btn btn-primary button-primary float-end" href="<?php echo base_url('enquiry/add') ?>">Add</a>
         </div>
         <?php echo form_open('enquiry/lists/'); ?>
         <div class="table-responsive">
