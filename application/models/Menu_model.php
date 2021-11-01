@@ -75,8 +75,6 @@ class Menu_model extends CI_Model
         $query = $this->db->get();
         $menus = $query->result_array();
         $menuId = $this->Menu_role_model->get_role_menuId();
-        var_dump($menuId);
-        die();
         foreach ($menus as $menu) :
             if ($menu['url']) {
                 $url = base_url($menu['url']);
