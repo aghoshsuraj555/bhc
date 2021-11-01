@@ -94,7 +94,6 @@ class User extends Controller
         $this->form_validation->set_rules('email', 'Email Id', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|callback_username_exists');
         $this->form_validation->set_rules('role', 'Role', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_message('required', 'required');
         $this->form_validation->set_message('valid_email', 'invalid email');
         $this->form_validation->set_error_delimiters('<span class="red">(', ')</span>');

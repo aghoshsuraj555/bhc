@@ -9,7 +9,8 @@ class Home extends Controller {
 	public function index()
  	{
 		$main['header']=$this->header();
-        $main['content']=$this->load->view('home');
+		$content = ''; 
+        $main['content']=$this->load->view('home', $content, true);
 		$this->load->view('main',$main);
  	}
 	
