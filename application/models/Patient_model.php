@@ -43,6 +43,7 @@ class Patient_model extends CI_Model
             $this->db->where('enquiry_date >=', @$daterange[0]);
             $this->db->where('enquiry_date <=', @$daterange[1]);
         }
+        $this->db->where('branch_id', $this->session->userdata('branch'));
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -73,6 +74,7 @@ class Patient_model extends CI_Model
             $this->db->where('enquiry_date >=', @$daterange[0]);
             $this->db->where('enquiry_date <=', @$daterange[1]);
         }
+        $this->db->where('branch_id', $this->session->userdata('branch'));
         $query = $this->db->get();
         return $query->result_array();
     }

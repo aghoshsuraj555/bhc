@@ -59,7 +59,8 @@ class Patient extends Controller
             $this->load->view('main', $main);
         } else {
             $data = array(
-                'patient_id' => $this->input->post('patientid'),
+                'patient_id' => $this->Patient_model->get_last_code(),
+                'branch_id' => $this->session->userdata('branch'),
                 'name' => $this->input->post('name'),
                 'email_id' => $this->input->post('email'),
                 'city' => $this->input->post('city'),
@@ -136,6 +137,7 @@ class Patient extends Controller
         } else {
             $data = array(
                 'patient_id' => $this->input->post('patientid'),
+                'branch_id' => $this->session->userdata('branch'),
                 'name' => $this->input->post('name'),
                 'email_id' => $this->input->post('email'),
                 'city' => $this->input->post('city'),
