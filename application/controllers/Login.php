@@ -35,7 +35,7 @@ class Login extends CI_Controller
 					'user_id' => $userdata->id,
 					'username' => $userdata->username,
 					'branch' => $userdata->branch_id,
-					'role' => $userdata->role,
+					'role' => $userdata->role_id,
 					'client_logged_in' => TRUE,
 				);
 

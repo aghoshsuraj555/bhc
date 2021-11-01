@@ -83,7 +83,7 @@ class Menu_model extends CI_Model
             }
             $sub_menus = $this->get_sub_menu($menu['id']);
             ($sub_menus) ? $collapse = "data-bs-toggle='collapse' data-bs-target='#home-collapse' aria-expanded='true'" : $collapse = '';
-            if ($this->session->userdata('role') === 1 || in_array($menuId, $menu['id'])) {
+            if($this->session->userdata('role') == 1 || in_array($menu['id'], $menuId)) {
                 $role_menu .= "<a href=" . $url . " class='nav_link' " . $collapse . "> <img src=" . base_url('/public/assets/images/icons/' . $menu['icon']) . " data-bs-toggle='tooltip' data-bs-placement='right' title=" . $menu['name'] . " alt='' srcset=''> <span class='nav_name'>" . $menu['name'] . "</span> </a>";
             }
             if ($sub_menus) {
@@ -95,7 +95,7 @@ class Menu_model extends CI_Model
                     } else {
                         $url = "javascript:void(0)";
                     }
-                    if ($this->session->userdata('role') === 1 || in_array($menuId, $sub_menu['id'])) {
+                    if ($this->session->userdata('role') == 1 || in_array($menu['id'], $menuId)) {
                         $role_menu .= "<li><a href=" . $url . " class='nav_link'>" . $sub_menu['name'] . "</a></li>";
                     }
                 endforeach;
