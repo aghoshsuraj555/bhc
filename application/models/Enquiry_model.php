@@ -43,6 +43,7 @@ class Enquiry_model extends CI_Model
         if ($this->session->userdata('role') == '1') {
             $this->db->where('branch_id', $this->session->userdata('branch'));
         }
+        $this->db->where("$this->table_name.branch_id", $this->session->userdata('branch'));
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -84,7 +85,7 @@ class Enquiry_model extends CI_Model
             $this->db->where('followup_date <=', @$followUpDate[1]);
         }
         if ($this->session->userdata('role') != 1) {
-            $this->db->where('branch_id', $this->session->userdata('branch'));
+            $this->db->where("$this->table_name.branch_id", $this->session->userdata('branch'));
         }
         $query = $this->db->get();
         return $query->result_array();

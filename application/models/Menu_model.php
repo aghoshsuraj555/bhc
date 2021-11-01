@@ -4,6 +4,7 @@ class Menu_model extends CI_Model
     function __construct()
     {
         parent::__construct();
+        $this->load->model('Menu_role_model');
         $this->table_name = 'menus';
         $this->primary_key = 'id';
     }
@@ -73,29 +74,34 @@ class Menu_model extends CI_Model
         $this->db->where('menu_id', $menu_id);
         $query = $this->db->get();
         $menus = $query->result_array();
+        $menuId = $this->Menu_role_model->get_role_menuId();
+        var_dump($menuId);
+        die();
         foreach ($menus as $menu) :
-            if($menu['url']){
+            if ($menu['url']) {
                 $url = base_url($menu['url']);
-            }
-            else{
+            } else {
                 $url = "javascript:void(0)";
             }
             $sub_menus = $this->get_sub_menu($menu['id']);
             ($sub_menus) ? $collapse = "data-bs-toggle='collapse' data-bs-target='#home-collapse' aria-expanded='true'" : $collapse = '';
-            $role_menu.= "<a href=" .$url. " class='nav_link' " . $collapse . "> <img src=" . base_url('/public/assets/images/icons/' . $menu['icon']) . " data-bs-toggle='tooltip' data-bs-placement='right' title=" . $menu['name'] . " alt='' srcset=''> <span class='nav_name'>" . $menu['name'] . "</span> </a>";
+            if ($this->session->userdata('role') === 1 || in_array($menuId, $menu['id'])) {
+                $role_menu .= "<a href=" . $url . " class='nav_link' " . $collapse . "> <img src=" . base_url('/public/assets/images/icons/' . $menu['icon']) . " data-bs-toggle='tooltip' data-bs-placement='right' title=" . $menu['name'] . " alt='' srcset=''> <span class='nav_name'>" . $menu['name'] . "</span> </a>";
+            }
             if ($sub_menus) {
-                $role_menu.= "<div class='collapse' id='home-collapse'>
+                $role_menu .= "<div class='collapse' id='home-collapse'>
                 <ul class='btn-toggle-nav list-unstyled fw-normal ps-md-5'>";
                 foreach ($sub_menus as $sub_menu) :
-                    if($sub_menu['url']){
+                    if ($sub_menu['url']) {
                         $url = base_url($sub_menu['url']);
-                    }
-                    else{
+                    } else {
                         $url = "javascript:void(0)";
                     }
-                    $role_menu.="<li><a href=".$url." class='nav_link'>".$sub_menu['name']."</a></li>";
+                    if ($this->session->userdata('role') === 1 || in_array($menuId, $sub_menu['id'])) {
+                        $role_menu .= "<li><a href=" . $url . " class='nav_link'>" . $sub_menu['name'] . "</a></li>";
+                    }
                 endforeach;
-                $role_menu.= '</ul>
+                $role_menu .= '</ul>
 				</div>';
             }
         endforeach;
@@ -110,4 +116,5 @@ class Menu_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
 }
