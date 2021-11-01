@@ -25,13 +25,10 @@ class Enquiry_model extends CI_Model
             $this->db->like("$this->table_name.name", @$post['name']);
         }
         if (@$post['contactno']) {
-            $this->db->like('contactno', @$post['contactno']);
+            $this->db->like("$this->table_name.contactno", @$post['contactno']);
         }
         if (@$post['whatsappno']) {
-            $this->db->like('whatsappno', @$post['whatsappno']);
-        }
-        if (@$post['enquiry_status']) {
-            $this->db->where('enquiry_status_id', @$post['enquiry_status']);
+            $this->db->like("$this->table_name.whatsappno", @$post['whatsappno']);
         }
         if (@$post['enquirydate']) {
             $enquiryDate = explode('-', $post['enquirydate']);
@@ -42,6 +39,9 @@ class Enquiry_model extends CI_Model
             $followUpDate = explode('-', $post['followupdate']);
             $this->db->where('followup_date >=', @$followUpDate[0]);
             $this->db->where('followup_date <=', @$followUpDate[1]);
+        }
+        if ($this->session->userdata('role') == '1') {
+            $this->db->where('branch_id', $this->session->userdata('branch'));
         }
         $query = $this->db->get();
         return $query->num_rows();
@@ -65,10 +65,10 @@ class Enquiry_model extends CI_Model
             $this->db->like("$this->table_name.name", @$post['name']);
         }
         if (@$post['contactno']) {
-            $this->db->like('contactno', @$post['contactno']);
+            $this->db->like("$this->table_name.contactno", @$post['contactno']);
         }
         if (@$post['whatsappno']) {
-            $this->db->like('whatsappno', @$post['whatsappno']);
+            $this->db->like("$this->table_name.whatsappno", @$post['whatsappno']);
         }
         if (@$post['enquiry_status']) {
             $this->db->where('enquiry_status_id', @$post['enquiry_status']);
@@ -82,6 +82,9 @@ class Enquiry_model extends CI_Model
             $followUpDate = explode('-', $post['followupdate']);
             $this->db->where('followup_date >=', @$followUpDate[0]);
             $this->db->where('followup_date <=', @$followUpDate[1]);
+        }
+        if ($this->session->userdata('role') != 1) {
+            $this->db->where('branch_id', $this->session->userdata('branch'));
         }
         $query = $this->db->get();
         return $query->result_array();

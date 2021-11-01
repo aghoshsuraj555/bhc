@@ -43,6 +43,7 @@ class Patient_model extends CI_Model
             $this->db->where('enquiry_date >=', @$daterange[0]);
             $this->db->where('enquiry_date <=', @$daterange[1]);
         }
+        $this->db->where('branch_id', $this->session->userdata('branch'));
         $query = $this->db->get();
         return $query->num_rows();
     }
@@ -65,7 +66,7 @@ class Patient_model extends CI_Model
         if (@$post['contactno']) {
             $this->db->like('contactno', @$post['contactno']);
         }
-        if (@$post['contactno']) {
+        if (@$post['whatsappno']) {
             $this->db->like('whatsappno', @$post['whatsappno']);
         }
         if (@$post['daterange']) {
@@ -73,6 +74,7 @@ class Patient_model extends CI_Model
             $this->db->where('enquiry_date >=', @$daterange[0]);
             $this->db->where('enquiry_date <=', @$daterange[1]);
         }
+        $this->db->where('branch_id', $this->session->userdata('branch'));
         $query = $this->db->get();
         return $query->result_array();
     }

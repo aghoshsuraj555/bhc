@@ -42,12 +42,12 @@ $nris = array('Yes', 'No');
                             <input type="text" class="form-control required" id="city" name="city" placeholder="City" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="state" class="form-label">State/Province</label>
-                            <input type="text" class="form-control required" id="state" name="state" placeholder="State" required>
+                            <label for="state" class="form-label">State/Province<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control required" id="state" name="state" placeholder="State">
                         </div>
                         <div class="col-md-6">
-                            <label for="pincode" class="form-label">Postal Code</label>
-                            <input type="text" class="form-control required" id="pincode" name="pincode" placeholder="pincode" required>
+                            <label for="pincode" class="form-label">Postal Code<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control required" id="pincode" name="pincode" placeholder="pincode">
                         </div>
                         <div class="col-md-6">
                             <label for="nationality" class="form-label">Nationality</label>

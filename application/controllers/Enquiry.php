@@ -58,6 +58,7 @@ class Enquiry extends Controller
         } else {
             $enquiry_status = $this->input->post('enquiry_status');
             $data = array(
+                'branch_id' => $this->session->userdata('branch'),
                 'name' => $this->input->post('name'),
                 'email_id' => $this->input->post('email'),
                 'contactno' => $this->input->post('contactno'),
@@ -78,6 +79,8 @@ class Enquiry extends Controller
             $result = $this->Enquiry_model->insert($data);
             if ($enquiry_status == 1) {
                 $data1 = array(
+                    'patient_id' => $this->Patient_model->get_last_code(),
+                    'branch_id' => $this->session->userdata('branch'),
                     'name' => $this->input->post('name'),
                     'email_id' => $this->input->post('email'),
                     'contactno' => $this->input->post('contactno'),
@@ -152,6 +155,8 @@ class Enquiry extends Controller
             $result = $this->Enquiry_model->update($data, $id);
             if ($enquiry_status == 1) {
                 $data1 = array(
+                    'patient_id' => $this->Patient_model->get_last_code(),
+                    'branch_id' => $this->session->userdata('branch'),
                     'name' => $this->input->post('name'),
                     'email_id' => $this->input->post('email'),
                     'contactno' => $this->input->post('contactno'),

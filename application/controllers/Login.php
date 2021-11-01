@@ -27,7 +27,7 @@ class Login extends CI_Controller
 				$logindata = array(
 					'user_id' => $userdata->id,
 					'login_date' => date('Y-m-d H:i:s'),
-					'login_ip' => $this->input->ip_address()
+					'login_ip' => $this->input->ip_address(),
 				);
 				$loginid = $this->Userlogins_model->insert($logindata);
 				$newdata = array();
