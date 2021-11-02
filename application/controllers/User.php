@@ -32,9 +32,9 @@ class User extends Controller
         $this->form_validation->set_rules('contactno', 'Contact Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
         $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
         $this->form_validation->set_rules('email', 'Email Id', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('username', 'Username', 'required|callback_username_exists');
         $this->form_validation->set_rules('role', 'Role', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');
         $this->form_validation->set_message('required', 'required');
         $this->form_validation->set_message('valid_email', 'invalid email');
@@ -93,6 +93,7 @@ class User extends Controller
         $this->form_validation->set_rules('whatsappno', 'WhatsApp Number', 'required|min_length[8]|max_length[15]|regex_match[/^[+0-9]/]');
         $this->form_validation->set_rules('email', 'Email Id', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|callback_username_exists');
+        $this->form_validation->set_rules('password', 'Password', 'min_length[5]');
         $this->form_validation->set_rules('role', 'Role', 'required');
         $this->form_validation->set_message('required', 'required');
         $this->form_validation->set_message('valid_email', 'invalid email');

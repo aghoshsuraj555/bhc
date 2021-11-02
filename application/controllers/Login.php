@@ -34,6 +34,7 @@ class Login extends CI_Controller
 				$newdata = array(
 					'user_id' => $userdata->id,
 					'username' => $userdata->username,
+					'name' => $userdata->fname.' '.$userdata->lname,
 					'branch' => $userdata->branch_id,
 					'role' => $userdata->role_id,
 					'client_logged_in' => TRUE,

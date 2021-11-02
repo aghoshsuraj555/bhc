@@ -23,12 +23,10 @@
 		echo form_close(); ?>
 		<div class="dropdown">
 			<button class="btn btn-light dropdown-toggle p-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-				Admin
+				<?php echo $this->session->userdata('name'); ?>
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-				<li><a class="dropdown-item" href="#">Action</a></li>
-				<li><a class="dropdown-item" href="#">Another action</a></li>
-				<li><a class="dropdown-item" href="#">Something else here</a></li>
+				<li><a class="dropdown-item" href="#">Logout</a></li>
 			</ul>
 		</div>
 	</div>

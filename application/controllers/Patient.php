@@ -136,7 +136,6 @@ class Patient extends Controller
             $this->load->view('main', $main);
         } else {
             $data = array(
-                'patient_id' => $this->input->post('patientid'),
                 'branch_id' => $this->session->userdata('branch'),
                 'name' => $this->input->post('name'),
                 'email_id' => $this->input->post('email'),

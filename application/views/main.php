@@ -241,6 +241,12 @@
                     minlength: 8,
                     maxlength: 15,
                     phone_number: true
+                },
+                password: {
+                    minlength: 5
+                },
+                confirm_password: {
+                    minlength: 5
                 }
             }
         });
