@@ -7,6 +7,7 @@
                 <div class="card-body">
                     <div class="row g-3">
                         <div class="col-md-6">
+                        <input type="hidden" class="" id="id" name="id" value="<?php echo $user->id;?>">
                             <label for="fname" class="form-label">First Name</label>
                             <input type="text" class="form-control required" id="fname" name="fname" value="<?php echo $user->fname;?>" placeholder="First Name">
                         </div>

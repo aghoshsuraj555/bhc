@@ -129,13 +129,13 @@ class User extends Controller
                 $image =  $this->upload->data();
                 $data = $image['file_name'];
             }
-            $result = $this->Patient_model->update($data,$id);
+            $result = $this->User_model->update($data,$id);
             if ($result) {
                 $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Success!</strong> Added Successfully!.
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>');
-                redirect('patient/lists/' . $return);
+                redirect('user/lists/' . $return);
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Error!</strong>Not Added!.

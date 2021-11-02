@@ -1,27 +1,28 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Controller extends CI_Controller {
-	
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+class Controller extends CI_Controller
+{
+
     function __construct()
     {
         parent::__construct();
         $this->load->model('Menu_model');
         $this->load->model('Branch_model');
-        if(!$this->session->userdata('client_logged_in'))
-		{
-		   redirect('login');		
-		}
+        $this->load->model('Permission_role_model');
+        if (!$this->session->userdata('client_logged_in')) {
+            redirect('login');
+        }
     }
-	
-	public function header()
-	{
+
+    public function header()
+    {
         $header['branches'] = $this->Branch_model->get_active();
         $header['menu'] = $this->Menu_model->get_role_menu();
-		return $this->load->view('include/header',$header,true);
-	}
+        return $this->load->view('include/header', $header, true);
+    }
 
     public function pagination($count, $controller)
-	{
-        $config['base_url'] = site_url($controller.'/lists');
+    {
+        $config['base_url'] = site_url($controller . '/lists');
         $config['total_rows'] = $count;
         $config['per_page'] = '10';
         $config['uri_segment'] = 3;
@@ -40,6 +41,5 @@ class Controller extends CI_Controller {
         $config['prev_tag_open'] = '<li class="left">';
         $config['prev_tag_close'] = '</li>';
         return $config;
-	}
-
+    }
 }

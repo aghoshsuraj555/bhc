@@ -60,6 +60,11 @@ class Permission extends Controller
           </div>');
                 redirect('permission');
             }
+            
         }
+    }
+    function wincurrent($a)
+    {
+        return true;
     }
 }
