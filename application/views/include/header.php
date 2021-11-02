@@ -26,7 +26,7 @@
 				<?php echo $this->session->userdata('name'); ?>
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-				<li><a class="dropdown-item" href="#">Logout</a></li>
+				<li><a class="dropdown-item" href="<?php echo base_url('home/logout');?>">Logout</a></li>
 			</ul>
 		</div>
 	</div>

@@ -27,6 +27,6 @@ class Home extends Controller {
  		$array_items =  array('user_id','username','name','branch','role','client_logged_in');
 		$this->session->unset_userdata($array_items); 
 		$this->session->sess_destroy();
-		redirect('crm/login');	
+		redirect('login');	
 	}
 }
