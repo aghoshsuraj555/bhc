@@ -19,7 +19,7 @@
                     <i class="bx bxs-user"></i><input type="text" class="m-2 ps-5 p-2 w-100 rounded-pill form-control" name="username" id="username" placeholder="Username">
                 </div>
                 <div class="password d-flex align-items-center">
-                    <i class="bx bxs-lock-alt"></i><input type="text" class="m-2 ps-5 p-2 w-100 rounded-pill form-control" name="password" id="password" placeholder="Password">
+                    <i class="bx bxs-lock-alt"></i><input type="password" class="m-2 ps-5 p-2 w-100 rounded-pill form-control" name="password" id="password" placeholder="Password">
                 </div>
                 <button class="btn m-4 w-50 rounded-pill" type="submit">Login</button>
                 <a href="#" class="nav-link text-white link-dark">Forgot Username/Password?</a>

@@ -8,6 +8,16 @@ class Enquiry_model extends CI_Model
         $this->primary_key = 'id';
     }
 
+    function get_cond($cond=array())
+    {
+        $this->db->select('*');
+        $this->db->from($this->table_name);
+        $this->db->where($cond);
+        $this->db->where("$this->table_name.branch_id", $this->session->userdata('branch'));
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
     function get_pagination_count()
     {
         $this->db->select('*');

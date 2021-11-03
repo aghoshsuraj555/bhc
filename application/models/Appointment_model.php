@@ -8,6 +8,16 @@ class Appointment_model extends CI_Model
         $this->primary_key = 'id';
     }
 
+    function get_cond($cond=array())
+    {
+        $this->db->select('*');
+        $this->db->from($this->table_name);
+        $this->db->join('patients', "$this->table_name.patient_id = patients.id", "left");
+        $this->db->where($cond);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
     function get_all($where=array(),$order='')
     {
         $this->db->select("*,$this->table_name.id as appointment_id,$this->table_name.status as status");

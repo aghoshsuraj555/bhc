@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/jquery-ui.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/select2.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/sample.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('public/assets/css/fullcalendar.min.css'); ?>">
     <script src="<?php echo base_url('public/assets/js/jquery.min.js'); ?>"></script>
     <script src="<?php echo base_url('public/assets/js/jquery.timepicker.min.js'); ?>"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
@@ -87,12 +88,13 @@
 </script>
 <!-- <script src="<?php echo base_url('public/assets/js/popper.js'); ?>"></script> -->
 <!-- <script src="<?php echo base_url('public/assets/js/bootstrap.min.js'); ?>"></script> -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script src="<?php echo base_url('public/assets/js/bootstrap.bundle.min.js'); ?>"></script>
-<script src="<?php echo base_url('public/assets/js/jquery.validate.min.js'); ?>"></script>
-<script src="<?php echo base_url('public/assets/js/jquery-ui.js'); ?>"></script>
-<script src="<?php echo base_url('public/assets/js/select2.min.js'); ?>"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url('public/assets/js/moment.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('public/assets/js/fullcalendar.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('public/assets/js/bootstrap.bundle.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('public/assets/js/jquery.validate.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('public/assets/js/jquery-ui.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('public/assets/js/select2.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('public/assets/js/daterangepicker.js'); ?>"></script>
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
@@ -273,9 +275,36 @@
                 }
             });
         }
-        $('#getAllDetails').on('click','.timepicker',function(){
-           $('.ui-timepicker-container').addClass('.popup-timepicker');
+        $('#getAllDetails').on('click', '.timepicker', function() {
+            $('.ui-timepicker-container').addClass('.popup-timepicker');
         });
+        <?php
+        if (@$calendar) {
+        ?>
+            var events = <?php echo json_encode(@$calendar) ?>;
+
+            var date = new Date()
+            var d = date.getDate(),
+                m = date.getMonth(),
+                y = date.getFullYear()
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                buttonText: {
+                    today: 'today',
+                    month: 'month',
+                    week: 'week',
+                    day: 'day'
+                },
+                events: events
+            });
+        <?php
+        }
+        ?>
     });
 </script>
 <script>
