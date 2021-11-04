@@ -589,7 +589,7 @@ class CI_Pagination {
 			else
 			{
 				$append = $this->prefix.$i.$this->suffix;
-				$output .= $this->prev_tag_open.'<a class="page-link" href="'.$base_url.$append.'"'.$attributes.$this->_attr_rel('prev').'>'
+				$output .= $this->prev_tag_open.'<a class="page-link" href="'.$base_url.$append.'"'.$attributes.$this->_attr_rel('prev').'>Previous'
 					.$this->prev_link.'</a>'.$this->prev_tag_close;
 			}
 

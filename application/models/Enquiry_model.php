@@ -10,7 +10,7 @@ class Enquiry_model extends CI_Model
 
     function get_cond($cond = array())
     {
-        $this->db->select('*');
+        $this->db->select("*,$this->table_name.id as id,$this->table_name.contactno as contactno,$this->table_name.whatsappno as whatsappno,$this->table_name.name as name");
         $this->db->from($this->table_name);
         $this->db->join('users', "$this->table_name.user_id=users.id", "left");
         $this->db->where($cond);
