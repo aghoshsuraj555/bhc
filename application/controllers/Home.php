@@ -4,12 +4,19 @@ class Home extends Controller {
 	function __construct()
     {
 		// Call the Model constructor
-		parent::__construct(); 
+		parent::__construct();
+		$this->load->model('Enquiry_model');
+		$this->load->model('Appointment_model'); 
 	}
 	public function index()
  	{
 		$main['header']=$this->header();
-		$content = ''; 
+		$content['followup'] = $this->Enquiry_model->get_cond(array('enquiry_status_id'=>1));
+		$content['converted'] = $this->Enquiry_model->get_cond(array('enquiry_status_id'=>3));
+		$content['total_enquiry'] = $this->Enquiry_model->get_cond();
+		$content['appointment'] = $this->Appointment_model->get_cond();
+		$content['appointment_list'] = $this->Appointment_model->get_cond(array('appointment_date'=>date('Y-m-d')));
+		$content['enquiry_list'] = $this->Enquiry_model->get_cond(array('followup_date'=>date('Y-m-d')));
         $main['content']=$this->load->view('home', $content, true);
 		$this->load->view('main',$main);
  	}

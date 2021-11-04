@@ -97,7 +97,7 @@ $nris = array('Yes', 'No');
                                 <?php } ?>
                             </select>
                         </div>
-                        <div class="col-md-6 d-none" id="followup">
+                        <div class="col-md-6 <?php echo ($enquiry->enquiry_status_id != 1)? 'd-none':''?>" id="followup">
                             <label for="followupdate" class="form-label">Followup Date</label>
                             <input type="text" class="form-control disable datepicker required" name="followupdate" id="followupdate" value="<?php echo ($enquiry->followup_date)?date('d-m-Y',strtotime($enquiry->followup_date)):'';?>">
                         </div>

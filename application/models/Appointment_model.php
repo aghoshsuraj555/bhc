@@ -13,6 +13,7 @@ class Appointment_model extends CI_Model
         $this->db->select('*');
         $this->db->from($this->table_name);
         $this->db->join('patients', "$this->table_name.patient_id = patients.id", "left");
+        $this->db->join('users', "$this->table_name.user_id=users.id", "left");
         $this->db->where($cond);
         $query = $this->db->get();
         return $query->result_array();

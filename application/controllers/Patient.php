@@ -22,7 +22,7 @@ class Patient extends Controller
     {
         $main['header'] = $this->header();
         $count = $this->Patient_model->get_pagination_count();
-        $config = $this->pagination($count, 'enquiry');
+        $config = $this->pagination($count, 'patient');
         if ($_POST) {
             $searchparams = $_POST;
         } else {
