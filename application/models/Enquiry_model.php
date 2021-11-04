@@ -8,12 +8,15 @@ class Enquiry_model extends CI_Model
         $this->primary_key = 'id';
     }
 
-    function get_cond($cond=array())
+    function get_cond($cond = array())
     {
         $this->db->select('*');
         $this->db->from($this->table_name);
         $this->db->join('users', "$this->table_name.user_id=users.id", "left");
         $this->db->where($cond);
+        if ($this->session->userdata('role') != 1) {
+            $this->db->where("$this->table_name.user_id", $this->session->userdata('user_id'));
+        }
         $this->db->where("$this->table_name.branch_id", $this->session->userdata('branch'));
         $query = $this->db->get();
         return $query->result_array();
@@ -50,6 +53,9 @@ class Enquiry_model extends CI_Model
             $followUpDate = explode('-', $post['followupdate']);
             $this->db->where('followup_date >=', @$followUpDate[0]);
             $this->db->where('followup_date <=', @$followUpDate[1]);
+        }
+        if ($this->session->userdata('role') != 1) {
+            $this->db->where("$this->table_name.user_id", $this->session->userdata('user_id'));
         }
         $this->db->where("$this->table_name.branch_id", $this->session->userdata('branch'));
         $query = $this->db->get();
@@ -91,6 +97,9 @@ class Enquiry_model extends CI_Model
             $followUpDate = explode('-', $post['followupdate']);
             $this->db->where('followup_date >=', @$followUpDate[0]);
             $this->db->where('followup_date <=', @$followUpDate[1]);
+        }
+        if ($this->session->userdata('role') != 1) {
+            $this->db->where("$this->table_name.user_id", $this->session->userdata('user_id'));
         }
         $this->db->where("$this->table_name.branch_id", $this->session->userdata('branch'));
         $query = $this->db->get();

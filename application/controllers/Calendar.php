@@ -25,7 +25,7 @@ class Calendar extends Controller
             $main['calendar'][$key]['title'] = $value['name'].'(Appointment)';
             $main['calendar'][$key]['start'] = $value['appointment_date'];
             $main['calendar'][$key]['end'] = $value['appointment_date'];
-            $main['calendar'][$key]['backgroundColor'] = "#00a65a";
+            $main['calendar'][$key]['backgroundColor'] = "#ab334b";
         }
         $main['content'] = $this->load->view('calendar/list', $content, true);
         $this->load->view('main', $main);
