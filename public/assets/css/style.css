@@ -150,6 +150,7 @@ a {
 }
 
 .dashboard .card .tableFixHead thead {
+    z-index: 1000;
     position: sticky;
     top: 0;
 }
