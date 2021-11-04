@@ -67,7 +67,7 @@
                     <div class="card">
                         <div class=" card-body ">
                             <div class="d-flex justify-content-between mb-3">
-                                <h5 class="card-title ">Today Appointments</h5>
+                                <h5 class="card-title ">Today's Appointments</h5>
                             </div>
 
                             <div class="table-responsive tableFixHead">
@@ -111,7 +111,7 @@
                     <div class="card h-100 ">
                         <div class="card-body ">
                             <div class="d-flex justify-content-between mb-3">
-                                <h5 class="card-title ">Today Enquiry</h5>
+                                <h5 class="card-title ">Today's Enquiry</h5>
                                 <a href="<?php echo base_url('enquiry'); ?>" class="btn btn-primary button-primary"> View All</a>
                             </div>
                             <div class="table-responsive tableFixHead">
