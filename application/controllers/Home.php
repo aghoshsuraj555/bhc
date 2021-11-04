@@ -15,8 +15,8 @@ class Home extends Controller {
 		$content['converted'] = $this->Enquiry_model->get_cond(array('enquiry_status_id'=>3));
 		$content['total_enquiry'] = $this->Enquiry_model->get_cond();
 		$content['appointment'] = $this->Appointment_model->get_cond();
-		$content['appointment_list'] = $this->Appointment_model->get_cond(array('appointment_date'=>date('Y-m-d')));
-		$content['enquiry_list'] = $this->Enquiry_model->get_cond(array('followup_date'=>date('Y-m-d')));
+		$content['appointments'] = $this->Appointment_model->get_cond(array('appointment_date'=>date('Y-m-d')));
+		$content['enquiries'] = $this->Enquiry_model->get_cond(array('followup_date'=>date('Y-m-d')));
         $main['content']=$this->load->view('home', $content, true);
 		$this->load->view('main',$main);
  	}

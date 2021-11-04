@@ -12,6 +12,7 @@ class Enquiry_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from($this->table_name);
+        $this->db->join('users', "$this->table_name.user_id=users.id", "left");
         $this->db->where($cond);
         $this->db->where("$this->table_name.branch_id", $this->session->userdata('branch'));
         $query = $this->db->get();
