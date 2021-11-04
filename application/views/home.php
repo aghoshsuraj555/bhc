@@ -97,7 +97,9 @@
                                             }
                                         } else {
                                             ?>
-                                            <tr><td colspan="5" class="text-center">No Details Available</td></tr>
+                                            <tr>
+                                                <td colspan="5" class="text-center">No Details Available</td>
+                                            </tr>
                                         <?php
                                         }
                                         ?>
@@ -122,6 +124,7 @@
                                             <th scope="col">Contact No</th>
                                             <th scope="col">Followup Date</th>
                                             <th scope="col">Assign To</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -134,12 +137,25 @@
                                                     <td><?php echo $enquiry['contactno']; ?></td>
                                                     <td><?php echo date('d-m-Y', strtotime($enquiry['followup_date'])); ?></td>
                                                     <td><?php echo $enquiry['fname'] . '-' . $enquiry['lname']; ?></td>
+                                                    <td>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-secondary" href="<?php echo base_url('enquiry/edit/' . $enquiry['id']) ?>">Edit</a>
+                                                            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+                                                                <span class="visually-hidden">Toggle Dropdown</span>
+                                                            </button>
+                                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                                                                <li><a class="dropdown-item" href="<?php echo base_url('enquiry/edit/' . $enquiry['id']) ?>">Edit</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                             <?php
                                             }
                                         } else {
                                             ?>
-                                            <tr><td colspan="4" class="text-center">No Details Available</td></tr>
+                                            <tr>
+                                                <td colspan="4" class="text-center">No Details Available</td>
+                                            </tr>
                                         <?php
                                         }
                                         ?>
