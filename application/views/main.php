@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/jquery.timepicker.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/jquery-ui.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/select2.min.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('public/assets/css/sample.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('public/assets/css/style.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('public/assets/css/fullcalendar.min.css'); ?>">
     <script src="<?php echo base_url('public/assets/js/jquery.min.js'); ?>"></script>
     <script src="<?php echo base_url('public/assets/js/jquery.timepicker.min.js'); ?>"></script>
