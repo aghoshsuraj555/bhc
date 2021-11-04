@@ -86,19 +86,31 @@
                                         if ($appointments) {
                                             foreach ($appointments as $appointment) {
                                         ?>
-                                                <tr>
-                                                    <td><?php echo $appointment['name']; ?></td>
-                                                    <td><?php echo $appointment['fname'] . '-' . $appointment['lname']; ?></td>
-                                                    <td><?php echo date('d-m-Y', strtotime($appointment['appointment_date'])); ?></td>
-                                                    <td><?php echo date('h:i a', strtotime($appointment['appointment_time'])); ?></td>
-                                                    <td><?php echo $appointment['service_name']; ?></td>
-                                                </tr>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $appointment['name']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $appointment['fname'] . '-' . $appointment['lname']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo date('d-m-Y', strtotime($appointment['appointment_date'])); ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo date('h:i a', strtotime($appointment['appointment_time'])); ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $appointment['service_name']; ?>
+                                                </td>
+                                            </tr>
                                             <?php
                                             }
                                         } else {
                                             ?>
-                                            <tr><td colspan="5" class="text-center">No Details Available</td></tr>
-                                        <?php
+                                                <tr>
+                                                    <td colspan="5" class="text-center">No Details Available</td>
+                                                </tr>
+                                                <?php
                                         }
                                         ?>
                                     </tbody>
@@ -120,7 +132,7 @@
                                         <tr>
                                             <th scope="col">Name</th>
                                             <th scope="col">Contact No</th>
-                                            <th scope="col">Followup Date</th>
+                                            <th scope="col">FollowUp-Date</th>
                                             <th scope="col">Assign To</th>
                                         </tr>
                                     </thead>
@@ -129,18 +141,28 @@
                                         if ($enquiries) {
                                             foreach ($enquiries as $enquiry) {
                                         ?>
-                                                <tr>
-                                                    <td><?php echo $enquiry['name']; ?></td>
-                                                    <td><?php echo $enquiry['contactno']; ?></td>
-                                                    <td><?php echo date('d-m-Y', strtotime($enquiry['followup_date'])); ?></td>
-                                                    <td><?php echo $enquiry['fname'] . '-' . $enquiry['lname']; ?></td>
-                                                </tr>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $enquiry['name']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $enquiry['contactno']; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo date('d-m-Y', strtotime($enquiry['followup_date'])); ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $enquiry['fname'] . '-' . $enquiry['lname']; ?>
+                                                </td>
+                                            </tr>
                                             <?php
                                             }
                                         } else {
                                             ?>
-                                            <tr><td colspan="4" class="text-center">No Details Available</td></tr>
-                                        <?php
+                                                <tr>
+                                                    <td colspan="4" class="text-center">No Details Available</td>
+                                                </tr>
+                                                <?php
                                         }
                                         ?>
                                     </tbody>

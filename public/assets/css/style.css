@@ -144,7 +144,8 @@ a {
 }
 
 .dashboard .card .tableFixHead {
-    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
     height: 15rem;
 }
 
