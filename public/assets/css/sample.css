@@ -220,6 +220,24 @@ a {
     border: 1px solid var(--button-color-custom-hover) !important;
 }
 
+.pagination .page-link {
+    color: #363636;
+}
+
+.pagination .page-item .active:hover {
+    color: #f7f6fb;
+}
+
+.pagination .page-item .active {
+    background-color: var(--button-color-primary) !important;
+    color: #f7f6fb;
+}
+
+.pagination .page-item .active::before {
+    background-color: transparent !important;
+    /* color: #f7f6fb; */
+}
+
 .nav_link img {
     width: 1.5rem;
     height: 1.5rem;
