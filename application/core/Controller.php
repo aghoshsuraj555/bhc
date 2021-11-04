@@ -28,8 +28,8 @@ class Controller extends CI_Controller
         $config['uri_segment'] = 3;
         $config['first_link'] = false;
         $config['last_link'] = false;
-        $config['next_link'] = '<i class="fa fa-angle-right"></i>';
-        $config['prev_link'] = '<i class="fa fa-angle-left"></i>';
+        $config['next_link'] = '';
+        $config['prev_link'] = '';
         $config['cur_tag_open'] = "<li class='page-item'><a class='page-link active'>";
         $config['cur_tag_close'] = "</a></li>";
         $config['full_tag_open'] = "<nav aria-label='Page navigation example'><ul class='pagination justify-content-center'>";
