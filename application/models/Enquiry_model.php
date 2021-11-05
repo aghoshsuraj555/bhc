@@ -46,13 +46,13 @@ class Enquiry_model extends CI_Model
         }
         if (@$post['enquirydate']) {
             $enquiryDate = explode('-', $post['enquirydate']);
-            $this->db->where('enquiry_date >=', @$enquiryDate[0]);
-            $this->db->where('enquiry_date <=', @$enquiryDate[1]);
+            $this->db->where('enquiry_date >=', date('Y-m-d',strtotime(@$enquiryDate[0])));
+            $this->db->where('enquiry_date <=', date('Y-m-d',strtotime(@$enquiryDate[1])));
         }
         if (@$post['followupdate']) {
             $followUpDate = explode('-', $post['followupdate']);
-            $this->db->where('followup_date >=', @$followUpDate[0]);
-            $this->db->where('followup_date <=', @$followUpDate[1]);
+            $this->db->where('followup_date >=', date('Y-m-d',strtotime(@$followUpDate[0])));
+            $this->db->where('followup_date <=', date('Y-m-d',strtotime(@$followUpDate[1])));
         }
         if ($this->session->userdata('role') != 1) {
             $this->db->where("$this->table_name.user_id", $this->session->userdata('user_id'));
@@ -90,13 +90,13 @@ class Enquiry_model extends CI_Model
         }
         if (@$post['enquirydate']) {
             $enquiryDate = explode('-', $post['enquirydate']);
-            $this->db->where('enquiry_date >=', @$enquiryDate[0]);
-            $this->db->where('enquiry_date <=', @$enquiryDate[1]);
+            $this->db->where('enquiry_date >=', date('Y-m-d',strtotime(@$enquiryDate[0])));
+            $this->db->where('enquiry_date <=', date('Y-m-d',strtotime(@$enquiryDate[1])));
         }
         if (@$post['followupdate']) {
             $followUpDate = explode('-', $post['followupdate']);
-            $this->db->where('followup_date >=', @$followUpDate[0]);
-            $this->db->where('followup_date <=', @$followUpDate[1]);
+            $this->db->where('followup_date >=', date('Y-m-d',strtotime(@$followUpDate[0])));
+            $this->db->where('followup_date <=', date('Y-m-d',strtotime(@$followUpDate[1])));
         }
         if ($this->session->userdata('role') != 1) {
             $this->db->where("$this->table_name.user_id", $this->session->userdata('user_id'));
