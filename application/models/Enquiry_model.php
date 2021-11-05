@@ -44,6 +44,9 @@ class Enquiry_model extends CI_Model
         if (@$post['whatsappno']) {
             $this->db->like("$this->table_name.whatsappno", @$post['whatsappno']);
         }
+        if (@$post['enquiry_status']) {
+            $this->db->where('enquiry_status_id', @$post['enquiry_status']);
+        }
         if (@$post['enquirydate']) {
             $enquiryDate = explode('-', $post['enquirydate']);
             $this->db->where('enquiry_date >=', date('Y-m-d',strtotime(@$enquiryDate[0])));
