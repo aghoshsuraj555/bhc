@@ -16,44 +16,49 @@
 					</div>
 				</div>
 				<div class="col-sm-3">
-					<div class="card h-100">
-						<div class="card-body d-flex flex-column align-items-center justify-content-center">
-							<img class="dash-icon p-2 rounded-circle bg-warning" src="<?php echo base_url('/public/assets/images/icons/person-feedback-svgrepo-com.svg'); ?>" alt="image1">
-							<div class="d-flex align-items-baseline justify-content-center">
-								<p class="card-text dash-icon-title bg-warning text-white rounded-3 pe-2 ps-2 mt-3">Total Enquiry</p>
-								<p class="card-text dash-icon-title bg-warning text-white rounded-3 pe-2 ps-2 mt-3 ms-2">
-									<?php echo count($total_enquiry); ?>
-								</p>
+					<a href="<?php echo base_url('enquiry/lists'); ?>">
+						<div class="card h-100">
+							<div class="card-body d-flex flex-column align-items-center justify-content-center">
+								<img class="dash-icon p-2 rounded-circle bg-warning" src="<?php echo base_url('/public/assets/images/icons/person-feedback-svgrepo-com.svg'); ?>" alt="image1">
+								<div class="d-flex align-items-baseline justify-content-center">
+									<p class="card-text dash-icon-title bg-warning text-white rounded-3 pe-2 ps-2 mt-3">Total Enquiry</p>
+									<p class="card-text dash-icon-title bg-warning text-white rounded-3 pe-2 ps-2 mt-3 ms-2">
+										<?php echo count($total_enquiry); ?>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-3">
-					<div class="card h-100">
-						<div class="card-body d-flex flex-column align-items-center justify-content-center">
-							<img class="dash-icon p-2 rounded-circle bg-danger" src="<?php echo base_url('/public/assets/images/icons/person-call-svgrepo-com.svg'); ?>" alt="image1">
-							<div class="d-flex align-items-baseline justify-content-center">
-								<p class="card-text dash-icon-title bg-danger text-white rounded-3 pe-2 ps-2 mt-3">Follow Up</p>
-								<p class="card-text dash-icon-title bg-danger text-white rounded-3 pe-2 ps-2 mt-3 ms-2">
-									<?php echo count($followup); ?>
-								</p>
+					<a href="<?php echo base_url('enquiry/lists/0?enquiry_status=1'); ?>">
+						<div class="card h-100">
+							<div class="card-body d-flex flex-column align-items-center justify-content-center">
+								<img class="dash-icon p-2 rounded-circle bg-danger" src="<?php echo base_url('/public/assets/images/icons/person-call-svgrepo-com.svg'); ?>" alt="image1">
+								<div class="d-flex align-items-baseline justify-content-center">
+									<p class="card-text dash-icon-title bg-danger text-white rounded-3 pe-2 ps-2 mt-3">Follow Up</p>
+									<p class="card-text dash-icon-title bg-danger text-white rounded-3 pe-2 ps-2 mt-3 ms-2">
+										<?php echo count($followup); ?>
+									</p>
+								</div>
 							</div>
-
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-3">
-					<div class="card">
-						<div class="card-body d-flex flex-column align-items-center justify-content-center">
-							<img class="dash-icon p-2 rounded-circle bg-success" src="<?php echo base_url('/public/assets/images/icons/person-add-svgrepo-com.svg'); ?>" alt="image1">
-							<div class="d-flex align-items-baseline justify-content-center">
-								<p class="card-text dash-icon-title bg-success text-white rounded-3 pe-2 ps-2 mt-3">Converted</p>
-								<p class="card-text dash-icon-title bg-success text-white rounded-3 pe-2 ps-2 mt-3 ms-2">
-									<?php echo count($converted); ?>
-								</p>
+					<a href="<?php echo base_url('enquiry/lists/0?enquiry_status=3'); ?>">
+						<div class="card h-100">
+							<div class="card-body d-flex flex-column align-items-center justify-content-center">
+								<img class="dash-icon p-2 rounded-circle bg-success" src="<?php echo base_url('/public/assets/images/icons/person-add-svgrepo-com.svg'); ?>" alt="image1">
+								<div class="d-flex align-items-baseline justify-content-center">
+									<p class="card-text dash-icon-title bg-success text-white rounded-3 pe-2 ps-2 mt-3">Converted</p>
+									<p class="card-text dash-icon-title bg-success text-white rounded-3 pe-2 ps-2 mt-3 ms-2">
+										<?php echo count($converted); ?>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
