@@ -68,8 +68,8 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
                             <td><?php echo $enquiry['whatsappno']; ?></td>
                             <td><?php echo $enquiry['enquiry_status']; ?></td>
                             <td><?php echo $enquiry['fname'] . ' ' . $enquiry['lname']; ?></td>
-                            <td><?php echo ($enquiry['enquiry_date'] && $enquiry['enquiry_date'] != '0000-00-00') ? date('d-m-Y', strtotime($enquiry['enquiry_date'])) : ''; ?></td>
-                            <td><?php echo ($enquiry['followup_date'] && $enquiry['followup_date'] != '0000-00-00') ? date('d-m-Y', strtotime($enquiry['followup_date'])) : ''; ?></td>
+                            <td><?php echo ($enquiry['enquiry_date'] && $enquiry['enquiry_date'] != '0000-00-00' && $enquiry['enquiry_date'] != '1970-01-01') ? date('d-m-Y', strtotime($enquiry['enquiry_date'])) : ''; ?></td>
+                            <td><?php echo ($enquiry['followup_date'] && $enquiry['followup_date'] != '0000-00-00' && $enquiry['followup_date'] != '1970-01-01') ? date('d-m-Y', strtotime($enquiry['followup_date'])) : ''; ?></td>
                             <td>
                                 <div class="btn-group">
                                     <a class="btn btn-secondary" href="<?php echo base_url('enquiry/edit/' . $enquiry['id'] . '/' . $return) ?>">Edit</a>

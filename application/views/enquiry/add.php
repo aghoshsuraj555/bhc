@@ -72,7 +72,7 @@ $nris = array('Yes', 'No');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="enquirydate" class="form-label">Enquiry Date</label>
-                            <input type="text" class="form-control disable datepicker required" name="enquirydate" id="enquirydate">
+                            <input type="text" class="form-control disable datepicker required" name="enquirydate" id="enquirydate" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="source" class="form-label">Source</label>
@@ -98,7 +98,7 @@ $nris = array('Yes', 'No');
                         </div>
                         <div class="col-md-6 d-none" id="followup">
                             <label for="followupdate" class="form-label">Followup Date</label>
-                            <input type="text" class="form-control disable datepicker required" name="followupdate" id="followupdate">
+                            <input type="text" class="form-control disable datepicker required" name="followupdate" id="followupdate" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="priority" class="form-label">Priority</label>

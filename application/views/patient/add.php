@@ -33,7 +33,7 @@ $methods = array('Y', 'N');
                         </div>
                         <div class="col-md-6">
                             <label for="dob" class="form-label">Date of Birth</label>
-                            <input type="text" class="form-control disable datepicker" id="dob" name="dob">
+                            <input type="text" class="form-control disable datepicker" id="dob" name="dob" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="gender" class="form-label align-items-center">Gender</label><br>
@@ -105,7 +105,7 @@ $methods = array('Y', 'N');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="enquiry-date" class="form-label">Enquiry Date</label>
-                            <input type="text" class="form-control disable datepicker required" name="enquirydate" id="enquirydate">
+                            <input type="text" class="form-control disable datepicker required" name="enquirydate" id="enquirydate" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="source" class="form-label">Source</label>

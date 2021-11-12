@@ -42,7 +42,7 @@ $statusarray = array('Y' => 'Active', 'N' => 'Deactive', 'classY' => 'success', 
                             <td><?php echo $patient['name']; ?></td>
                             <td><?php echo $patient['contactno']; ?></td>
                             <td><?php echo $patient['whatsappno']; ?></td>
-                            <td><?php echo ($patient['enquiry_date'] && $patient['enquiry_date'] != '0000-00-00') ? date('d-m-Y', strtotime($patient['enquiry_date'])) : ''; ?></td>
+                            <td><?php echo ($patient['enquiry_date'] && $patient['enquiry_date'] != '0000-00-00' && $patient['enquiry_date'] != '1970-01-01') ? date('d-m-Y', strtotime($patient['enquiry_date'])) : ''; ?></td>
                             <td>
                                 <div class="btn-group">
                                     <a class="btn btn-secondary" href="<?php echo base_url('patient/edit/' . $patient['id'] . '/' . $return) ?>">Edit</a>

@@ -4,7 +4,7 @@ $nris = array('Yes', 'No');
 $methods = array('Y', 'N');
 ?>
 <div class="container-fluid d-md-flex mb-4">
-    <?php echo form_open_multipart('patient/edit/'.$patient->id, array('id' => 'form')); ?>
+    <?php echo form_open_multipart('patient/edit/'.$patient->id.'/'.$return, array('id' => 'form')); ?>
     <div class="row col-12">
         <div class="col-sm-12 col-md-6">
             <div class="card">

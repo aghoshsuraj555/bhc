@@ -3,7 +3,7 @@ $priorities = array('High', 'Medium', 'Low');
 $nris = array('Yes', 'No');
 ?>
 <div class="container-fluid d-md-flex mb-4">
-    <?php echo form_open('enquiry/edit/'.$enquiry->id, array('id' => 'form')); ?>
+    <?php echo form_open('enquiry/edit/'.$enquiry->id.'/'.$return, array('id' => 'form')); ?>
     <div class="row col-12">
         <div class="col-sm-12 col-md-6">
             <div class="card">
@@ -73,7 +73,7 @@ $nris = array('Yes', 'No');
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="enquirydate" class="form-label">Enquiry Date</label>
-                            <input type="text" class="form-control disable datepicker required" name="enquirydate"  id="enquirydate" value="<?php echo ($enquiry->enquiry_date)?date('d-m-Y',strtotime($enquiry->enquiry_date)):'';?>">
+                            <input type="text" class="form-control disable datepicker required" name="enquirydate"  id="enquirydate" value="<?php echo ($enquiry->enquiry_date)?date('d-m-Y',strtotime($enquiry->enquiry_date)):'';?>" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="source" class="form-label">Source</label>
@@ -99,7 +99,7 @@ $nris = array('Yes', 'No');
                         </div>
                         <div class="col-md-6 <?php echo ($enquiry->enquiry_status_id != 1)? 'd-none':''?>" id="followup">
                             <label for="followupdate" class="form-label">Followup Date</label>
-                            <input type="text" class="form-control disable datepicker required" name="followupdate" id="followupdate" value="<?php echo ($enquiry->followup_date)?date('d-m-Y',strtotime($enquiry->followup_date)):'';?>">
+                            <input type="text" class="form-control disable datepicker required" name="followupdate" id="followupdate" value="<?php echo ($enquiry->followup_date)?date('d-m-Y',strtotime($enquiry->followup_date)):'';?>" readonly>
                         </div>
                         <div class="col-md-6">
                             <label for="priority" class="form-label">Priority</label>
